@@ -48,13 +48,16 @@
 #import <UIKit/UIKit.h>
 #import "EAGLView.h"
 #import <CoreMotion/CoreMotion.h>
-@interface MainViewController : UIViewController
+#import <AVFoundation/AVFoundation.h>
+@interface MainViewController : UIViewController <AVCaptureAudioDataOutputSampleBufferDelegate>
 {
-    BOOL _addedObservers;
-    BOOL _recording;
-    UIBackgroundTaskIdentifier _backgroundRecordingID;
-    BOOL _allowedToUseGPU;
     IBOutlet EAGLView *glView;
+    IBOutlet UIView *CameraView;
     CMMotionManager *motionManager;
+    AVCaptureSession *CaptureSession;
+    AVCaptureDeviceInput *VideoInputDevice;
 }
+
+@property (nonatomic,strong) AVCaptureVideoPreviewLayer *PreviewLayer;
+
 @end

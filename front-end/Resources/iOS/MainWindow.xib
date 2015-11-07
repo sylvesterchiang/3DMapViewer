@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIApplication">
@@ -13,7 +14,7 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <customObject id="3" userLabel="iOSGLEssentialPractices App Delegate" customClass="iOSGLEssentialPracticesAppDelegate">
             <connections>
-                <outlet property="glView" destination="17" id="18"/>
+                <outlet property="glView" destination="ccX-TN-bIX" id="JT8-XB-0h0"/>
                 <outlet property="mainViewController" destination="19" id="20"/>
                 <outlet property="window" destination="12" id="14"/>
             </connections>
@@ -26,16 +27,43 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </window>
         <viewController id="19" customClass="MainViewController">
-            <view key="view" contentMode="scaleToFill" id="17" customClass="EAGLView">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="y3J-YK-gMa"/>
+                <viewControllerLayoutGuide type="bottom" id="so4-vr-WBJ"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="17">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31z-CN-Xbr">
+                        <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccX-TN-bIX" customClass="EAGLView">
+                        <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
                 <animations/>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="ccX-TN-bIX" firstAttribute="leading" secondItem="17" secondAttribute="leadingMargin" constant="-20" id="F86-w0-OFn"/>
+                    <constraint firstItem="so4-vr-WBJ" firstAttribute="top" secondItem="31z-CN-Xbr" secondAttribute="bottom" id="IdV-Vm-78E"/>
+                    <constraint firstItem="31z-CN-Xbr" firstAttribute="leading" secondItem="17" secondAttribute="leadingMargin" constant="-20" id="Ikh-85-VPs"/>
+                    <constraint firstItem="so4-vr-WBJ" firstAttribute="top" secondItem="ccX-TN-bIX" secondAttribute="bottom" id="Iwc-aY-a9T"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ccX-TN-bIX" secondAttribute="trailing" constant="-20" id="YfZ-kV-3Yk"/>
+                    <constraint firstItem="31z-CN-Xbr" firstAttribute="top" secondItem="y3J-YK-gMa" secondAttribute="bottom" constant="-20" id="eKZ-qP-gCG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="31z-CN-Xbr" secondAttribute="trailing" constant="-20" id="qRm-bN-SZT"/>
+                    <constraint firstItem="ccX-TN-bIX" firstAttribute="top" secondItem="y3J-YK-gMa" secondAttribute="bottom" constant="-20" id="qhW-Z5-PGJ"/>
+                </constraints>
             </view>
             <extendedEdge key="edgesForExtendedLayout"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="glView" destination="17" id="21"/>
+                <outlet property="CameraView" destination="31z-CN-Xbr" id="YeJ-S4-jNA"/>
+                <outlet property="glView" destination="ccX-TN-bIX" id="rO8-co-8cC"/>
             </connections>
         </viewController>
     </objects>

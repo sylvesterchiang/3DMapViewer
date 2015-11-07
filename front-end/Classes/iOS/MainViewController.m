@@ -55,6 +55,7 @@
 
 @implementation MainViewController 
 
+@synthesize PreviewLayer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,21 +67,88 @@
     return self;
 }
 
+
+-(void)setupCameraDisplay{
+    //---------------------------------
+    //----- SETUP CAPTURE SESSION -----
+    //---------------------------------
+    NSLog(@"Setting up capture session");
+    CaptureSession = [[AVCaptureSession alloc] init];
+    
+    //----- ADD INPUTS -----
+    NSLog(@"Adding video input");
+    
+    //ADD VIDEO INPUT
+    AVCaptureDevice *VideoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if (VideoDevice)
+    {
+        NSError *error;
+        VideoInputDevice = [AVCaptureDeviceInput deviceInputWithDevice:VideoDevice error:&error];
+        if (!error)
+        {
+            if ([CaptureSession canAddInput:VideoInputDevice])
+                [CaptureSession addInput:VideoInputDevice];
+            else
+                NSLog(@"Couldn't add video input");
+        }
+        else
+        {
+            NSLog(@"Couldn't create video input");
+        }
+    }
+    else
+    {
+        NSLog(@"Couldn't create video capture device");
+    }
+    
+    //----- ADD OUTPUTS -----
+    
+    //ADD VIDEO PREVIEW LAYER
+    NSLog(@"Adding video preview layer");
+    [self setPreviewLayer:[[AVCaptureVideoPreviewLayer alloc] initWithSession:CaptureSession]];
+    
+    [[self PreviewLayer] setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+    
+    
+    //----- SET THE IMAGE QUALITY / RESOLUTION -----
+    //Options:
+    //	AVCaptureSessionPresetHigh - Highest recording quality (varies per device)
+    //	AVCaptureSessionPresetMedium - Suitable for WiFi sharing (actual values may change)
+    //	AVCaptureSessionPresetLow - Suitable for 3G sharing (actual values may change)
+    //	AVCaptureSessionPreset640x480 - 640x480 VGA (check its supported before setting it)
+    //	AVCaptureSessionPreset1280x720 - 1280x720 720p HD (check its supported before setting it)
+    //	AVCaptureSessionPresetPhoto - Full photo resolution (not supported for video output)
+    NSLog(@"Setting image quality");
+    [CaptureSession setSessionPreset:AVCaptureSessionPresetMedium];
+    if ([CaptureSession canSetSessionPreset:AVCaptureSessionPreset640x480])		//Check size based configs are supported before setting them
+        [CaptureSession setSessionPreset:AVCaptureSessionPreset640x480];
+    
+    
+    
+    //----- DISPLAY THE PREVIEW LAYER -----
+    //Display it full screen under out view controller existing controls
+    NSLog(@"Display the preview layer");
+    CGRect layerRect = [[[self view] layer] bounds];
+
+    [PreviewLayer setBounds:layerRect];
+    [PreviewLayer setPosition:CGPointMake(CGRectGetMidX(layerRect),
+                                          CGRectGetMidY(layerRect))];
+    
+    //[[[self view] layer] addSublayer:[[self CaptureManager] previewLayer]];
+    //We use this instead so it goes on a layer behind our UI controls (avoids us having to manually bring each control to the front):
+    
+    [CameraView setClipsToBounds:YES];
+    
+    [[CameraView layer] addSublayer:PreviewLayer];
+    
+    
+    //----- START THE CAPTURE SESSION RUNNING -----
+    [CaptureSession startRunning];
+}
+
 - (void)viewDidLoad
 {
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(applicationDidEnterBackground)
-                                                 name:UIApplicationDidEnterBackgroundNotification
-                                               object:[UIApplication sharedApplication]];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(applicationWillEnterForeground)
-                                                 name:UIApplicationWillEnterForegroundNotification
-                                               object:[UIApplication sharedApplication]];
-    
-    
-    
-    
+    [self setupCameraDisplay];
     
     
     motionManager = [CMMotionManager new];
@@ -100,7 +168,8 @@
     self.view.backgroundColor = [UIColor purpleColor];
     
     glView.dataObj = [GLDataModel new];
-   
+    
+    [self.view bringSubviewToFront:glView];
     
     [super viewDidLoad];
 }

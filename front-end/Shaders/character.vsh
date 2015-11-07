@@ -79,7 +79,6 @@ void main (void)
 	// the polygon shows up in the right place
 	gl_Position	= modelViewProjectionMatrix * inPosition;
 	
-    
     varNormal = normalize(normalMatrix * inNormal);
     
 	// Pass the unmodified texture coordinate from the vertex buffer

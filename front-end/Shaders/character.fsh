@@ -75,7 +75,7 @@ void main (void)
 	fragColor = texture(diffuseTexture, varTexcoord.st, 0.0);
 	#else
     NdotL = dot(varNormal, vec3(0.0,0.0,1.0));
-    gl_FragColor = texture2D(diffuseTexture, varTexcoord.st, 0.0)*1.0;
+    gl_FragColor = texture2D(diffuseTexture, varTexcoord.st, 0.0);
 	#endif
     
     //texture2D(diffuseTexture, varTexcoord.st, 0.0);

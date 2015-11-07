@@ -119,7 +119,7 @@ GLboolean m_useVBOs;
 	GLfloat projection[16];
 	GLfloat mvp[16];
 	
-    glDisable(GL_CULL_FACE);
+//    glDisable(GL_CULL_FACE);
     
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
@@ -151,7 +151,7 @@ GLboolean m_useVBOs;
         }
     }
     
-    mtxLoadTranslate(modelView, 0.0, 200.0, 0.0);
+    mtxLoadTranslate(modelView, 500.0, 0.0, 0.0);
     
     // Multiply the modelview and projection matrix and set it in the shader
     mtxMultiply(mvp, projection, modelView);
@@ -827,7 +827,7 @@ static GLsizei GetGLTypeSize(GLenum type)
 		// Load our character model //
 		//////////////////////////////
 		
-		filePathName = [[NSBundle mainBundle] pathForResource:@"Cube_Textured" ofType:@"obj"];
+		filePathName = [[NSBundle mainBundle] pathForResource:@"dreidelTextured" ofType:@"obj"];
 		m_characterModel = loadFile([filePathName cStringUsingEncoding:NSASCIIStringEncoding]);
 		
 		// Build Vertex Buffer Objects (VBOs) and Vertex Array Object (VAOs) with our model data
@@ -851,7 +851,7 @@ static GLsizei GetGLTypeSize(GLenum type)
 		// Load texture for our character //
 		////////////////////////////////////
 		
-		filePathName = [[NSBundle mainBundle] pathForResource:@"Cube" ofType:@"png"];
+		filePathName = [[NSBundle mainBundle] pathForResource:@"DreidelTextureMap" ofType:@"png"];
 		demoImage *image = imgLoadImage([filePathName cStringUsingEncoding:NSASCIIStringEncoding], false);
 		
 		// Build a texture object with our image data
