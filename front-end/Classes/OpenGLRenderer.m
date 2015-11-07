@@ -112,6 +112,8 @@ GLboolean m_useVBOs;
 
 - (void) render
 {
+    glClearColor( 0, 0, 0, 0.0);
+    
 	// Set up the modelview and projection matricies
 	GLfloat modelView[16];
 	GLfloat projection[16];

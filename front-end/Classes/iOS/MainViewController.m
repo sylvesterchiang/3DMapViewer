@@ -53,7 +53,7 @@
 
 @end
 
-@implementation MainViewController
+@implementation MainViewController 
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -68,6 +68,21 @@
 
 - (void)viewDidLoad
 {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidEnterBackground)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:[UIApplication sharedApplication]];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationWillEnterForeground)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:[UIApplication sharedApplication]];
+    
+    
+    
+    
+    
+    
     motionManager = [CMMotionManager new];
     [motionManager setGyroUpdateInterval:3];
     
@@ -79,19 +94,34 @@
         
     }];
     
-   
+    glView.opaque = NO; // NB: Apple DELETES THIS VALUE FROM NIB
+    glView.backgroundColor = [UIColor clearColor]; // Optional: you can do this in NIB instead
+    
+    self.view.backgroundColor = [UIColor purpleColor];
     
     glView.dataObj = [GLDataModel new];
-    
-    
+   
     
     [super viewDidLoad];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)showError:(NSError *)error
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:error.localizedDescription
+                                                        message:error.localizedFailureReason
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
+    [alertView release];
 }
 
 @end

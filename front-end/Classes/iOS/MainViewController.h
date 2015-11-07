@@ -50,6 +50,10 @@
 #import <CoreMotion/CoreMotion.h>
 @interface MainViewController : UIViewController
 {
+    BOOL _addedObservers;
+    BOOL _recording;
+    UIBackgroundTaskIdentifier _backgroundRecordingID;
+    BOOL _allowedToUseGPU;
     IBOutlet EAGLView *glView;
     CMMotionManager *motionManager;
 }
