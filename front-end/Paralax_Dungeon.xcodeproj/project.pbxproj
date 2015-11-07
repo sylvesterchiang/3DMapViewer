@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		3A609E3C11B9DB4700AA4C48 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A609E3B11B9DB4700AA4C48 /* OpenGLES.framework */; };
+		3A609E4711B9DB6000AA4C48 /* OpenGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A609E3F11B9DB6000AA4C48 /* OpenGLRenderer.m */; };
+		3A609E5611B9DB7700AA4C48 /* vectorUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 3A609E4C11B9DB7700AA4C48 /* vectorUtil.c */; };
+		3A609E5911B9DB7700AA4C48 /* matrixUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 3A609E5211B9DB7700AA4C48 /* matrixUtil.c */; };
+		3A609E5A11B9DB7700AA4C48 /* imageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A609E5311B9DB7700AA4C48 /* imageUtil.m */; };
+		3A609E6211B9DB9400AA4C48 /* character.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 3A609E5E11B9DB9400AA4C48 /* character.vsh */; };
+		3A609E6311B9DB9400AA4C48 /* character.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 3A609E5F11B9DB9400AA4C48 /* character.fsh */; };
+		3A609EB911B9DCF200AA4C48 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A609EB811B9DCF200AA4C48 /* QuartzCore.framework */; };
+		3A7DCEBE14BE4E9C00C51D27 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DCEBD14BE4E9C00C51D27 /* EAGLView.m */; };
+		3AC5C4A816693B6C00FEE565 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC5C4A716693B6C00FEE565 /* Default-568h@2x.png */; };
+		3AE0447613D624E400F51EF4 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE0447513D624E400F51EF4 /* MainWindow.xib */; };
+		3AE0447E13D6252E00F51EF4 /* ES2Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0447B13D6252E00F51EF4 /* ES2Renderer.m */; };
+		3AE0447F13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0447D13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.m */; };
+		3AE9119712CAF36A005ED635 /* sourceUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9119612CAF36A005ED635 /* sourceUtil.c */; };
+		537E51341635EC17003EA7BA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 537E51331635EC17003EA7BA /* MainViewController.m */; };
+		9E148C8916E16187001BA26D /* modelUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 9E148C8816E16187001BA26D /* modelUtil.c */; };
+		EF091E7B1AAEB55F00013CFC /* DreidelTextureMap.png in Resources */ = {isa = PBXBuildFile; fileRef = EF091E7A1AAEB55F00013CFC /* DreidelTextureMap.png */; };
+		EF091E7F1AAEB80000013CFC /* dreidelTextured.obj in Resources */ = {isa = PBXBuildFile; fileRef = EF091E7E1AAEB80000013CFC /* dreidelTextured.obj */; };
+		EF516F7C1BEDA17600FE89ED /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF516F7B1BEDA17600FE89ED /* CoreMotion.framework */; };
+		EFBC9DE61AB67C4200496BE6 /* GLDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Paralax_Dungeon_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paralax_Dungeon_Prefix.pch; sourceTree = "<group>"; };
+		3A609E3811B9DB3300AA4C48 /* Dreidel App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dreidel App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A609E3B11B9DB4700AA4C48 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3A609E3F11B9DB6000AA4C48 /* OpenGLRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLRenderer.m; sourceTree = "<group>"; };
+		3A609E4011B9DB6000AA4C48 /* OpenGLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLRenderer.h; sourceTree = "<group>"; };
+		3A609E4B11B9DB7700AA4C48 /* vectorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vectorUtil.h; path = UtilSrc/vectorUtil.h; sourceTree = "<group>"; };
+		3A609E4C11B9DB7700AA4C48 /* vectorUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vectorUtil.c; path = UtilSrc/vectorUtil.c; sourceTree = "<group>"; };
+		3A609E4D11B9DB7700AA4C48 /* sourceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sourceUtil.h; path = UtilSrc/sourceUtil.h; sourceTree = "<group>"; };
+		3A609E4F11B9DB7700AA4C48 /* modelUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = modelUtil.h; path = UtilSrc/modelUtil.h; sourceTree = "<group>"; };
+		3A609E5111B9DB7700AA4C48 /* matrixUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrixUtil.h; path = UtilSrc/matrixUtil.h; sourceTree = "<group>"; };
+		3A609E5211B9DB7700AA4C48 /* matrixUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = matrixUtil.c; path = UtilSrc/matrixUtil.c; sourceTree = "<group>"; };
+		3A609E5311B9DB7700AA4C48 /* imageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = imageUtil.m; path = UtilSrc/imageUtil.m; sourceTree = "<group>"; };
+		3A609E5411B9DB7700AA4C48 /* imageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imageUtil.h; path = UtilSrc/imageUtil.h; sourceTree = "<group>"; };
+		3A609E5511B9DB7700AA4C48 /* glUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glUtil.h; path = UtilSrc/glUtil.h; sourceTree = "<group>"; };
+		3A609E5E11B9DB9400AA4C48 /* character.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = character.vsh; path = Shaders/character.vsh; sourceTree = "<group>"; };
+		3A609E5F11B9DB9400AA4C48 /* character.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = character.fsh; path = Shaders/character.fsh; sourceTree = "<group>"; };
+		3A609EB811B9DCF200AA4C48 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3A7DCEBC14BE4E9C00C51D27 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAGLView.h; path = iOS/EAGLView.h; sourceTree = "<group>"; };
+		3A7DCEBD14BE4E9C00C51D27 /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EAGLView.m; path = iOS/EAGLView.m; sourceTree = "<group>"; };
+		3AC5C4A716693B6C00FEE565 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3AE0447513D624E400F51EF4 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = Resources/iOS/MainWindow.xib; sourceTree = "<group>"; };
+		3AE0447A13D6252E00F51EF4 /* ES2Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ES2Renderer.h; path = iOS/ES2Renderer.h; sourceTree = "<group>"; };
+		3AE0447B13D6252E00F51EF4 /* ES2Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ES2Renderer.m; path = iOS/ES2Renderer.m; sourceTree = "<group>"; };
+		3AE0447C13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOSGLEssentialsAppDelegate.h; path = iOS/iOSGLEssentialsAppDelegate.h; sourceTree = "<group>"; };
+		3AE0447D13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOSGLEssentialsAppDelegate.m; path = iOS/iOSGLEssentialsAppDelegate.m; sourceTree = "<group>"; };
+		3AE9119612CAF36A005ED635 /* sourceUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sourceUtil.c; path = UtilSrc/sourceUtil.c; sourceTree = "<group>"; };
+		537E51321635EC17003EA7BA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = iOS/MainViewController.h; sourceTree = "<group>"; };
+		537E51331635EC17003EA7BA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = iOS/MainViewController.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Paralax_Dungeon-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Paralax_Dungeon-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		9E148C8816E16187001BA26D /* modelUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = modelUtil.c; sourceTree = "<group>"; };
+		AF31B2271301C52D006A0A99 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		EF091E7A1AAEB55F00013CFC /* DreidelTextureMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DreidelTextureMap.png; sourceTree = "<group>"; };
+		EF091E7E1AAEB80000013CFC /* dreidelTextured.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dreidelTextured.obj; sourceTree = "<group>"; };
+		EF516F7B1BEDA17600FE89ED /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		EFBC9DE41AB67C4200496BE6 /* GLDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLDataModel.h; path = iOS/GLDataModel.h; sourceTree = "<group>"; };
+		EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLDataModel.m; path = iOS/GLDataModel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF516F7C1BEDA17600FE89ED /* CoreMotion.framework in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				3A609E3C11B9DB4700AA4C48 /* OpenGLES.framework in Frameworks */,
+				3A609EB911B9DCF200AA4C48 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3AE0447C13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.h */,
+				3AE0447D13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.m */,
+				537E51321635EC17003EA7BA /* MainViewController.h */,
+				537E51331635EC17003EA7BA /* MainViewController.m */,
+				3A7DCEBC14BE4E9C00C51D27 /* EAGLView.h */,
+				3A7DCEBD14BE4E9C00C51D27 /* EAGLView.m */,
+				3A609E4011B9DB6000AA4C48 /* OpenGLRenderer.h */,
+				3A609E3F11B9DB6000AA4C48 /* OpenGLRenderer.m */,
+				3AE0447A13D6252E00F51EF4 /* ES2Renderer.h */,
+				3AE0447B13D6252E00F51EF4 /* ES2Renderer.m */,
+				EFBC9DE41AB67C4200496BE6 /* GLDataModel.h */,
+				EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A609E3811B9DB3300AA4C48 /* Dreidel App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				3AC5C4A716693B6C00FEE565 /* Default-568h@2x.png */,
+				AF31B2271301C52D006A0A99 /* Readme.txt */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				3A609E5B11B9DB7A00AA4C48 /* Shaders */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3AE9119612CAF36A005ED635 /* sourceUtil.c */,
+				3A609E4D11B9DB7700AA4C48 /* sourceUtil.h */,
+				3A609E4C11B9DB7700AA4C48 /* vectorUtil.c */,
+				3A609E4B11B9DB7700AA4C48 /* vectorUtil.h */,
+				9E148C8816E16187001BA26D /* modelUtil.c */,
+				3A609E4F11B9DB7700AA4C48 /* modelUtil.h */,
+				3A609E5211B9DB7700AA4C48 /* matrixUtil.c */,
+				3A609E5111B9DB7700AA4C48 /* matrixUtil.h */,
+				3A609E5311B9DB7700AA4C48 /* imageUtil.m */,
+				3A609E5411B9DB7700AA4C48 /* imageUtil.h */,
+				3A609E5511B9DB7700AA4C48 /* glUtil.h */,
+				32CA4F630368D1EE00C91783 /* Paralax_Dungeon_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF091E7E1AAEB80000013CFC /* dreidelTextured.obj */,
+				EF091E7A1AAEB55F00013CFC /* DreidelTextureMap.png */,
+				3AE0447513D624E400F51EF4 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Paralax_Dungeon-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF516F7B1BEDA17600FE89ED /* CoreMotion.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				3A609E3B11B9DB4700AA4C48 /* OpenGLES.framework */,
+				3A609EB811B9DCF200AA4C48 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A609E5B11B9DB7A00AA4C48 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				3A609E5E11B9DB9400AA4C48 /* character.vsh */,
+				3A609E5F11B9DB9400AA4C48 /* character.fsh */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* GLEssentials */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GLEssentials" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GLEssentials;
+			productName = iOSGLEssentials;
+			productReference = 3A609E3811B9DB3300AA4C48 /* Dreidel App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = QE4Q39QVNE;
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Paralax_Dungeon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* GLEssentials */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF091E7B1AAEB55F00013CFC /* DreidelTextureMap.png in Resources */,
+				3A609E6211B9DB9400AA4C48 /* character.vsh in Resources */,
+				EF091E7F1AAEB80000013CFC /* dreidelTextured.obj in Resources */,
+				3A609E6311B9DB9400AA4C48 /* character.fsh in Resources */,
+				3AE0447613D624E400F51EF4 /* MainWindow.xib in Resources */,
+				3AC5C4A816693B6C00FEE565 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				3A609E4711B9DB6000AA4C48 /* OpenGLRenderer.m in Sources */,
+				EFBC9DE61AB67C4200496BE6 /* GLDataModel.m in Sources */,
+				3A609E5611B9DB7700AA4C48 /* vectorUtil.c in Sources */,
+				3A609E5911B9DB7700AA4C48 /* matrixUtil.c in Sources */,
+				3A609E5A11B9DB7700AA4C48 /* imageUtil.m in Sources */,
+				3AE9119712CAF36A005ED635 /* sourceUtil.c in Sources */,
+				3AE0447E13D6252E00F51EF4 /* ES2Renderer.m in Sources */,
+				3AE0447F13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.m in Sources */,
+				3A7DCEBE14BE4E9C00C51D27 /* EAGLView.m in Sources */,
+				537E51341635EC17003EA7BA /* MainViewController.m in Sources */,
+				9E148C8916E16187001BA26D /* modelUtil.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Paralax_Dungeon_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = ESSENTIAL_GL_PRACTICES_IOS;
+				INFOPLIST_FILE = "Paralax_Dungeon-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flaxapps.dreidelp;
+				PRODUCT_NAME = "Dreidel App";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Paralax_Dungeon_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = ESSENTIAL_GL_PRACTICES_IOS;
+				INFOPLIST_FILE = "Paralax_Dungeon-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flaxapps.dreidelp;
+				PRODUCT_NAME = "Dreidel App";
+				PROVISIONING_PROFILE = "";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GLEssentials" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Paralax_Dungeon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
