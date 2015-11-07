@@ -804,7 +804,7 @@ static GLsizei GetGLTypeSize(GLenum type)
 		// Load our character model //
 		//////////////////////////////
 		
-		filePathName = [[NSBundle mainBundle] pathForResource:@"cube" ofType:@"obj"];
+		filePathName = [[NSBundle mainBundle] pathForResource:@"Cube_Textured" ofType:@"obj"];
 		m_characterModel = loadFile([filePathName cStringUsingEncoding:NSASCIIStringEncoding]);
 		
 		// Build Vertex Buffer Objects (VBOs) and Vertex Array Object (VAOs) with our model data
@@ -828,7 +828,7 @@ static GLsizei GetGLTypeSize(GLenum type)
 		// Load texture for our character //
 		////////////////////////////////////
 		
-		filePathName = [[NSBundle mainBundle] pathForResource:@"DreidelTextureMap" ofType:@"png"];
+		filePathName = [[NSBundle mainBundle] pathForResource:@"Cube" ofType:@"png"];
 		demoImage *image = imgLoadImage([filePathName cStringUsingEncoding:NSASCIIStringEncoding], false);
 		
 		// Build a texture object with our image data

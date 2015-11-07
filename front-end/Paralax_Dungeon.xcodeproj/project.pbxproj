@@ -25,6 +25,8 @@
 		3AE0447E13D6252E00F51EF4 /* ES2Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0447B13D6252E00F51EF4 /* ES2Renderer.m */; };
 		3AE0447F13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0447D13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.m */; };
 		3AE9119712CAF36A005ED635 /* sourceUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9119612CAF36A005ED635 /* sourceUtil.c */; };
+		44BBBA3B1BEE53BE00119855 /* Cube_Textured.obj in Resources */ = {isa = PBXBuildFile; fileRef = 44BBBA3A1BEE53BE00119855 /* Cube_Textured.obj */; };
+		44BBBA3D1BEE53C900119855 /* Cube.png in Resources */ = {isa = PBXBuildFile; fileRef = 44BBBA3C1BEE53C900119855 /* Cube.png */; };
 		537E51341635EC17003EA7BA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 537E51331635EC17003EA7BA /* MainViewController.m */; };
 		9E148C8916E16187001BA26D /* modelUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 9E148C8816E16187001BA26D /* modelUtil.c */; };
 		EF091E7B1AAEB55F00013CFC /* DreidelTextureMap.png in Resources */ = {isa = PBXBuildFile; fileRef = EF091E7A1AAEB55F00013CFC /* DreidelTextureMap.png */; };
@@ -65,6 +67,8 @@
 		3AE0447C13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOSGLEssentialsAppDelegate.h; path = iOS/iOSGLEssentialsAppDelegate.h; sourceTree = "<group>"; };
 		3AE0447D13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOSGLEssentialsAppDelegate.m; path = iOS/iOSGLEssentialsAppDelegate.m; sourceTree = "<group>"; };
 		3AE9119612CAF36A005ED635 /* sourceUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sourceUtil.c; path = UtilSrc/sourceUtil.c; sourceTree = "<group>"; };
+		44BBBA3A1BEE53BE00119855 /* Cube_Textured.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cube_Textured.obj; sourceTree = "<group>"; };
+		44BBBA3C1BEE53C900119855 /* Cube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cube.png; sourceTree = "<group>"; };
 		537E51321635EC17003EA7BA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = iOS/MainViewController.h; sourceTree = "<group>"; };
 		537E51331635EC17003EA7BA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = iOS/MainViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Paralax_Dungeon-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Paralax_Dungeon-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				EF69C4E61BEE386E008A9A3D /* cube.obj */,
+				44BBBA3C1BEE53C900119855 /* Cube.png */,
+				44BBBA3A1BEE53BE00119855 /* Cube_Textured.obj */,
 				EF091E7E1AAEB80000013CFC /* dreidelTextured.obj */,
 				EF091E7A1AAEB55F00013CFC /* DreidelTextureMap.png */,
 				3AE0447513D624E400F51EF4 /* MainWindow.xib */,
@@ -248,11 +254,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44BBBA3D1BEE53C900119855 /* Cube.png in Resources */,
 				EF091E7B1AAEB55F00013CFC /* DreidelTextureMap.png in Resources */,
 				3A609E6211B9DB9400AA4C48 /* character.vsh in Resources */,
 				EF091E7F1AAEB80000013CFC /* dreidelTextured.obj in Resources */,
 				3A609E6311B9DB9400AA4C48 /* character.fsh in Resources */,
 				3AE0447613D624E400F51EF4 /* MainWindow.xib in Resources */,
+				44BBBA3B1BEE53BE00119855 /* Cube_Textured.obj in Resources */,
 				3AC5C4A816693B6C00FEE565 /* Default-568h@2x.png in Resources */,
 				EF69C4E71BEE386E008A9A3D /* cube.obj in Resources */,
 			);
