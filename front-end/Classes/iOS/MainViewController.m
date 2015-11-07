@@ -156,7 +156,8 @@
     
     NSOperationQueue *queue = [NSOperationQueue new];
     
-    [motionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion *data, NSError *error){
+    
+    [motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXTrueNorthZVertical toQueue:queue withHandler:^(CMDeviceMotion *data, NSError *error){
         
         glView.dataObj.rMat = data.attitude.rotationMatrix;
         
