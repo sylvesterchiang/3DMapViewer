@@ -127,8 +127,29 @@ GLboolean m_useVBOs;
     
 	// Calculate the projection matrix
     mtxLoadPerspective(projection, 90, (float)m_viewWidth / (float)m_viewHeight,5.0,10000);
-    mtxLoadTranslate(modelView, 0.0, 0.0, 0.0);
     
+    
+    if(self.dataObj){
+        
+        CMRotationMatrix m = self.dataObj.rMat;
+        
+        float rFinal[16] = {
+            m.m11,m.m21,m.m31,0,
+            m.m12,m.m22,m.m32,0,
+            m.m13,m.m23,m.m33,0,
+                0,    0,    0,1,
+        };
+        
+        float tmpProj[16];
+        
+        mtxMultiply(tmpProj, projection, rFinal);
+        
+        for (int i = 0; i < 16; i++) {
+            projection[i] = tmpProj[i];
+        }
+    }
+    
+    mtxLoadTranslate(modelView, 0.0, 200.0, 0.0);
     
     // Multiply the modelview and projection matrix and set it in the shader
     mtxMultiply(mvp, projection, modelView);

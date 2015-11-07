@@ -1,7 +1,8 @@
+
 /*
-     File: MainViewController.m
- Abstract: The main view controller
-  Version: 1.6
+     File: matrix.h
+ Abstract: Simple 4x4 matrix computations
+  Version: 2.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -41,57 +42,25 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2012 Apple Inc. All Rights Reserved.
+ Copyright (C) 2014 Apple Inc. All Rights Reserved.
  
  */
 
-#import "MainViewController.h"
-#import "vectorUtil.h"
-#import "matrixUtil.h"
+#ifndef MATRIX_H
+#define MATRIX_H
 
-@interface MainViewController ()
+void mat4f_LoadIdentity(float* m);
+void mat4f_LoadScale(float* s, float* m);
 
-@end
+void mat4f_LoadXRotation(float radians, float* mout);
+void mat4f_LoadYRotation(float radians, float* mout);
+void mat4f_LoadZRotation(float radians, float* mout);
 
-@implementation MainViewController
+void mat4f_LoadTranslation(float* t, float* mout);
 
+void mat4f_LoadPerspective(float fov_radians, float aspect, float zNear, float zFar, float* mout);
+void mat4f_LoadOrtho(float left, float right, float bottom, float top, float near, float far, float* mout);
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
+void mat4f_MultiplyMat4f(const float* a, const float* b, float* mout);
 
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    motionManager = [CMMotionManager new];
-    [motionManager setGyroUpdateInterval:3];
-    
-    NSOperationQueue *queue = [NSOperationQueue new];
-    
-    [motionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion *data, NSError *error){
-        
-        glView.dataObj.rMat = data.attitude.rotationMatrix;
-        
-    }];
-    
-   
-    
-    glView.dataObj = [GLDataModel new];
-    
-    
-    
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-@end
+#endif /* MATRIX_H */

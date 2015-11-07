@@ -33,6 +33,16 @@
 		EF091E7F1AAEB80000013CFC /* dreidelTextured.obj in Resources */ = {isa = PBXBuildFile; fileRef = EF091E7E1AAEB80000013CFC /* dreidelTextured.obj */; };
 		EF516F7C1BEDA17600FE89ED /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF516F7B1BEDA17600FE89ED /* CoreMotion.framework */; };
 		EF69C4E71BEE386E008A9A3D /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = EF69C4E61BEE386E008A9A3D /* cube.obj */; };
+		EF69C4EE1BEE99A8008A9A3D /* RosyWriterCapturePipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = EF69C4EA1BEE99A8008A9A3D /* RosyWriterCapturePipeline.m */; };
+		EF69C4EF1BEE99A8008A9A3D /* RosyWriterOpenGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = EF69C4ED1BEE99A8008A9A3D /* RosyWriterOpenGLRenderer.m */; };
+		EF69C4F31BEE9A57008A9A3D /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF69C4F21BEE9A57008A9A3D /* OpenGLPixelBufferView.m */; };
+		EF69C4F91BEE9A6B008A9A3D /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = EF69C4F61BEE9A6B008A9A3D /* matrix.c */; };
+		EF69C4FA1BEE9A6B008A9A3D /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = EF69C4F81BEE9A6B008A9A3D /* ShaderUtilities.c */; };
+		EF69C4FC1BEE9B68008A9A3D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF69C4FB1BEE9B68008A9A3D /* ImageIO.framework */; };
+		EF69C4FE1BEE9B71008A9A3D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF69C4FD1BEE9B71008A9A3D /* CoreMedia.framework */; };
+		EF69C5001BEE9B78008A9A3D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF69C4FF1BEE9B78008A9A3D /* CoreVideo.framework */; };
+		EF69C5021BEE9B7F008A9A3D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF69C5011BEE9B7F008A9A3D /* AssetsLibrary.framework */; };
+		EF69C5041BEE9B8A008A9A3D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF69C5031BEE9B8A008A9A3D /* AVFoundation.framework */; };
 		EFBC9DE61AB67C4200496BE6 /* GLDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +88,22 @@
 		EF091E7E1AAEB80000013CFC /* dreidelTextured.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dreidelTextured.obj; sourceTree = "<group>"; };
 		EF516F7B1BEDA17600FE89ED /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		EF69C4E61BEE386E008A9A3D /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
+		EF69C4E91BEE99A8008A9A3D /* RosyWriterCapturePipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RosyWriterCapturePipeline.h; sourceTree = "<group>"; };
+		EF69C4EA1BEE99A8008A9A3D /* RosyWriterCapturePipeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RosyWriterCapturePipeline.m; sourceTree = "<group>"; };
+		EF69C4EB1BEE99A8008A9A3D /* RosyWriterRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RosyWriterRenderer.h; sourceTree = "<group>"; };
+		EF69C4EC1BEE99A8008A9A3D /* RosyWriterOpenGLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RosyWriterOpenGLRenderer.h; sourceTree = "<group>"; };
+		EF69C4ED1BEE99A8008A9A3D /* RosyWriterOpenGLRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RosyWriterOpenGLRenderer.m; sourceTree = "<group>"; };
+		EF69C4F11BEE9A57008A9A3D /* OpenGLPixelBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLPixelBufferView.h; sourceTree = "<group>"; };
+		EF69C4F21BEE9A57008A9A3D /* OpenGLPixelBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLPixelBufferView.m; sourceTree = "<group>"; };
+		EF69C4F51BEE9A6B008A9A3D /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
+		EF69C4F61BEE9A6B008A9A3D /* matrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrix.c; sourceTree = "<group>"; };
+		EF69C4F71BEE9A6B008A9A3D /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
+		EF69C4F81BEE9A6B008A9A3D /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
+		EF69C4FB1BEE9B68008A9A3D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		EF69C4FD1BEE9B71008A9A3D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		EF69C4FF1BEE9B78008A9A3D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		EF69C5011BEE9B7F008A9A3D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		EF69C5031BEE9B8A008A9A3D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EFBC9DE41AB67C4200496BE6 /* GLDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLDataModel.h; path = iOS/GLDataModel.h; sourceTree = "<group>"; };
 		EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLDataModel.m; path = iOS/GLDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +113,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF69C5041BEE9B8A008A9A3D /* AVFoundation.framework in Frameworks */,
+				EF69C5021BEE9B7F008A9A3D /* AssetsLibrary.framework in Frameworks */,
+				EF69C5001BEE9B78008A9A3D /* CoreVideo.framework in Frameworks */,
+				EF69C4FE1BEE9B71008A9A3D /* CoreMedia.framework in Frameworks */,
+				EF69C4FC1BEE9B68008A9A3D /* ImageIO.framework in Frameworks */,
 				EF516F7C1BEDA17600FE89ED /* CoreMotion.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
@@ -131,6 +162,7 @@
 			children = (
 				3AC5C4A716693B6C00FEE565 /* Default-568h@2x.png */,
 				AF31B2271301C52D006A0A99 /* Readme.txt */,
+				EF69C4E81BEE998C008A9A3D /* Rosy */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				3A609E5B11B9DB7A00AA4C48 /* Shaders */,
@@ -147,8 +179,8 @@
 				3AE9119612CAF36A005ED635 /* sourceUtil.c */,
 				3A609E4D11B9DB7700AA4C48 /* sourceUtil.h */,
 				3A609E4C11B9DB7700AA4C48 /* vectorUtil.c */,
-				3A609E4B11B9DB7700AA4C48 /* vectorUtil.h */,
 				9E148C8816E16187001BA26D /* modelUtil.c */,
+				3A609E4B11B9DB7700AA4C48 /* vectorUtil.h */,
 				3A609E4F11B9DB7700AA4C48 /* modelUtil.h */,
 				3A609E5211B9DB7700AA4C48 /* matrixUtil.c */,
 				3A609E5111B9DB7700AA4C48 /* matrixUtil.h */,
@@ -178,6 +210,11 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF69C5031BEE9B8A008A9A3D /* AVFoundation.framework */,
+				EF69C5011BEE9B7F008A9A3D /* AssetsLibrary.framework */,
+				EF69C4FF1BEE9B78008A9A3D /* CoreVideo.framework */,
+				EF69C4FD1BEE9B71008A9A3D /* CoreMedia.framework */,
+				EF69C4FB1BEE9B68008A9A3D /* ImageIO.framework */,
 				EF516F7B1BEDA17600FE89ED /* CoreMotion.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -195,6 +232,41 @@
 				3A609E5F11B9DB9400AA4C48 /* character.fsh */,
 			);
 			name = Shaders;
+			sourceTree = "<group>";
+		};
+		EF69C4E81BEE998C008A9A3D /* Rosy */ = {
+			isa = PBXGroup;
+			children = (
+				EF69C4F01BEE9A4A008A9A3D /* Utilities */,
+				EF69C4E91BEE99A8008A9A3D /* RosyWriterCapturePipeline.h */,
+				EF69C4EA1BEE99A8008A9A3D /* RosyWriterCapturePipeline.m */,
+				EF69C4EB1BEE99A8008A9A3D /* RosyWriterRenderer.h */,
+				EF69C4EC1BEE99A8008A9A3D /* RosyWriterOpenGLRenderer.h */,
+				EF69C4ED1BEE99A8008A9A3D /* RosyWriterOpenGLRenderer.m */,
+			);
+			name = Rosy;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EF69C4F01BEE9A4A008A9A3D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EF69C4F41BEE9A63008A9A3D /* OpenGL */,
+				EF69C4F11BEE9A57008A9A3D /* OpenGLPixelBufferView.h */,
+				EF69C4F21BEE9A57008A9A3D /* OpenGLPixelBufferView.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		EF69C4F41BEE9A63008A9A3D /* OpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				EF69C4F51BEE9A6B008A9A3D /* matrix.h */,
+				EF69C4F61BEE9A6B008A9A3D /* matrix.c */,
+				EF69C4F71BEE9A6B008A9A3D /* ShaderUtilities.h */,
+				EF69C4F81BEE9A6B008A9A3D /* ShaderUtilities.c */,
+			);
+			name = OpenGL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,7 +295,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = QE4Q39QVNE;
@@ -273,17 +345,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF69C4EE1BEE99A8008A9A3D /* RosyWriterCapturePipeline.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				3A609E4711B9DB6000AA4C48 /* OpenGLRenderer.m in Sources */,
+				EF69C4EF1BEE99A8008A9A3D /* RosyWriterOpenGLRenderer.m in Sources */,
 				EFBC9DE61AB67C4200496BE6 /* GLDataModel.m in Sources */,
 				3A609E5611B9DB7700AA4C48 /* vectorUtil.c in Sources */,
 				3A609E5911B9DB7700AA4C48 /* matrixUtil.c in Sources */,
 				3A609E5A11B9DB7700AA4C48 /* imageUtil.m in Sources */,
+				EF69C4FA1BEE9A6B008A9A3D /* ShaderUtilities.c in Sources */,
 				3AE9119712CAF36A005ED635 /* sourceUtil.c in Sources */,
+				EF69C4F31BEE9A57008A9A3D /* OpenGLPixelBufferView.m in Sources */,
 				3AE0447E13D6252E00F51EF4 /* ES2Renderer.m in Sources */,
 				3AE0447F13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.m in Sources */,
 				3A7DCEBE14BE4E9C00C51D27 /* EAGLView.m in Sources */,
 				537E51341635EC17003EA7BA /* MainViewController.m in Sources */,
+				EF69C4F91BEE9A6B008A9A3D /* matrix.c in Sources */,
 				9E148C8916E16187001BA26D /* modelUtil.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

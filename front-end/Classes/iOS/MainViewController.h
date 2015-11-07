@@ -50,24 +50,7 @@
 #import <CoreMotion/CoreMotion.h>
 @interface MainViewController : UIViewController
 {
-    CGPoint startPoint;
-    float startRot;
     IBOutlet EAGLView *glView;
-    int rSpeed;
-    int rAccel;
-    int rIterations;
-    bool isSpinning;
-    bool isReturning;
-    bool isFalling;
-    float startEnergy;
-    float returnLetter;
-    NSTimer *ctrlTimer;
-    GLDataModel *dataObj;
-    
-    int lastLetter;
-    
-    UILabel *result;
-    
     CMMotionManager *motionManager;
 }
 @end

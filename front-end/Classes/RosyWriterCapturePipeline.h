@@ -1,7 +1,8 @@
-/*
-     File: MainViewController.m
- Abstract: The main view controller
-  Version: 1.6
+
+ /*
+     File: RosyWriterCapturePipeline.h
+ Abstract: The class that creates and manages the AVCaptureSession
+  Version: 2.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -41,57 +42,48 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2012 Apple Inc. All Rights Reserved.
+ Copyright (C) 2014 Apple Inc. All Rights Reserved.
  
  */
 
-#import "MainViewController.h"
-#import "vectorUtil.h"
-#import "matrixUtil.h"
 
-@interface MainViewController ()
+#import <AVFoundation/AVFoundation.h>
+
+@protocol RosyWriterCapturePipelineDelegate;
+
+@interface RosyWriterCapturePipeline : NSObject 
+
+- (void)setDelegate:(id<RosyWriterCapturePipelineDelegate>)delegate callbackQueue:(dispatch_queue_t)delegateCallbackQueue; // delegate is weak referenced
+
+// These methods are synchronous
+- (void)startRunning;
+- (void)stopRunning;
+
+@property(readwrite) BOOL renderingEnabled; // When set to false the GPU will not be used after the setRenderingEnabled: call returns.
+
+@property(readwrite) AVCaptureVideoOrientation recordingOrientation; // client can set the orientation for the recorded movie
+
+- (CGAffineTransform)transformFromVideoBufferOrientationToOrientation:(AVCaptureVideoOrientation)orientation withAutoMirroring:(BOOL)mirroring; // only valid after startRunning has been called
+
+// Stats
+@property(readonly) float videoFrameRate;
+@property(readonly) CMVideoDimensions videoDimensions;
 
 @end
 
-@implementation MainViewController
+@protocol RosyWriterCapturePipelineDelegate <NSObject>
+@required
 
+- (void)capturePipeline:(RosyWriterCapturePipeline *)capturePipeline didStopRunningWithError:(NSError *)error;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
+// Preview
+- (void)capturePipeline:(RosyWriterCapturePipeline *)capturePipeline previewPixelBufferReadyForDisplay:(CVPixelBufferRef)previewPixelBuffer;
+- (void)capturePipelineDidRunOutOfPreviewBuffers:(RosyWriterCapturePipeline *)capturePipeline;
 
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    motionManager = [CMMotionManager new];
-    [motionManager setGyroUpdateInterval:3];
-    
-    NSOperationQueue *queue = [NSOperationQueue new];
-    
-    [motionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion *data, NSError *error){
-        
-        glView.dataObj.rMat = data.attitude.rotationMatrix;
-        
-    }];
-    
-   
-    
-    glView.dataObj = [GLDataModel new];
-    
-    
-    
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+// Recording
+- (void)capturePipelineRecordingDidStart:(RosyWriterCapturePipeline *)capturePipeline;
+- (void)capturePipeline:(RosyWriterCapturePipeline *)capturePipeline recordingDidFailWithError:(NSError *)error; // Can happen at any point after a startRecording call, for example: startRecording->didFail (without a didStart), willStop->didFail (without a didStop)
+- (void)capturePipelineRecordingWillStop:(RosyWriterCapturePipeline *)capturePipeline;
+- (void)capturePipelineRecordingDidStop:(RosyWriterCapturePipeline *)capturePipeline;
 
 @end

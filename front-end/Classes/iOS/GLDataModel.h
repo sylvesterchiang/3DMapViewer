@@ -7,10 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <CoreMotion/CoreMotion.h>
 @interface GLDataModel : NSObject
-@property (nonatomic) float rotationX;
-@property (nonatomic) float rotationY;
-@property (nonatomic) float rotationZ;
-@property (nonatomic) float rotationLetter;
+@property (nonatomic) CMRotationMatrix rMat;
 @end

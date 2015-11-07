@@ -6,4 +6,5 @@
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
     #import "GLDataModel.h"
+    #define radiansToDegrees(x) (180/M_PI)*x
 #endif

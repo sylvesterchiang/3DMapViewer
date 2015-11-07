@@ -1,7 +1,8 @@
+
 /*
-     File: MainViewController.m
- Abstract: The main view controller
-  Version: 1.6
+     File: OpenGLPixelBufferView.h
+ Abstract: The OpenGL ES view
+  Version: 2.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -41,57 +42,18 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2012 Apple Inc. All Rights Reserved.
+ Copyright (C) 2014 Apple Inc. All Rights Reserved.
  
  */
 
-#import "MainViewController.h"
-#import "vectorUtil.h"
-#import "matrixUtil.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreVideo/CoreVideo.h>
 
-@interface MainViewController ()
+@interface OpenGLPixelBufferView : UIView
 
-@end
-
-@implementation MainViewController
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    motionManager = [CMMotionManager new];
-    [motionManager setGyroUpdateInterval:3];
-    
-    NSOperationQueue *queue = [NSOperationQueue new];
-    
-    [motionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion *data, NSError *error){
-        
-        glView.dataObj.rMat = data.attitude.rotationMatrix;
-        
-    }];
-    
-   
-    
-    glView.dataObj = [GLDataModel new];
-    
-    
-    
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+- (void)displayPixelBuffer:(CVPixelBufferRef)pixelBuffer;
+- (void)flushPixelBufferCache;
+- (void)reset;
 
 @end

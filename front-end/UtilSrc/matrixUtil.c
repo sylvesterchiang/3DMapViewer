@@ -988,3 +988,5 @@ void mtx3x3Multiply(float* mtx, const float* lhs, const float* rhs)
 	mtx[8] = lhs[2]*rhs[6] + lhs[5] * rhs[7] + lhs[8] * rhs[8];
 }
 
+
+

@@ -154,5 +154,8 @@ void mtx3x3Transpose(float* mtx, const float* src);
 // 3x3 MTX = 3x3 SRC^-1
 void mtx3x3Invert(float* mtx, const float* src);
 
+
+
+
 #endif //__MATRIX_UTIL_H__
 

@@ -1,7 +1,8 @@
+
 /*
-     File: MainViewController.m
- Abstract: The main view controller
-  Version: 1.6
+     File: ShaderUtilities.h
+ Abstract: Shader compiler and linker utilities
+  Version: 2.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -41,57 +42,27 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2012 Apple Inc. All Rights Reserved.
+ Copyright (C) 2014 Apple Inc. All Rights Reserved.
  
  */
 
-#import "MainViewController.h"
-#import "vectorUtil.h"
-#import "matrixUtil.h"
 
-@interface MainViewController ()
-
-@end
-
-@implementation MainViewController
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    motionManager = [CMMotionManager new];
-    [motionManager setGyroUpdateInterval:3];
+#ifndef RosyWriter_ShaderUtilities_h
+#define RosyWriter_ShaderUtilities_h
     
-    NSOperationQueue *queue = [NSOperationQueue new];
-    
-    [motionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion *data, NSError *error){
-        
-        glView.dataObj.rMat = data.attitude.rotationMatrix;
-        
-    }];
-    
-   
-    
-    glView.dataObj = [GLDataModel new];
-    
-    
-    
-    [super viewDidLoad];
-}
+#include <OpenGLES/ES2/gl.h>
+#include <OpenGLES/ES2/glext.h>
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+GLint glueCompileShader(GLenum target, GLsizei count, const GLchar **sources, GLuint *shader);
+GLint glueLinkProgram(GLuint program);
+GLint glueValidateProgram(GLuint program);
+GLint glueGetUniformLocation(GLuint program, const GLchar *name);
 
-@end
+GLint glueCreateProgram(const GLchar *vertSource, const GLchar *fragSource,
+                        GLsizei attribNameCt, const GLchar **attribNames, 
+                        const GLint *attribLocations,
+                        GLsizei uniformNameCt, const GLchar **uniformNames,
+                        GLint *uniformLocations,
+                        GLuint *program);
+
+#endif
