@@ -117,6 +117,8 @@ GLboolean m_useVBOs;
 	GLfloat projection[16];
 	GLfloat mvp[16];
 	
+    glDisable(GL_CULL_FACE);
+    
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 	// Use the program for rendering our character
@@ -124,14 +126,8 @@ GLboolean m_useVBOs;
     
     
 	// Calculate the projection matrix
-    mtxLoadPerspective(projection, 30, (float)m_viewWidth / (float)m_viewHeight,5.0,10000);
-    
-    
-    // Calculate the modelview matrix to render our character
-    //  at the proper position and rotation
-    mtxLoadTranslate(modelView, 0, 150, -2050);
-    mtxRotateXApply(modelView, 20.0f);
-    
+    mtxLoadPerspective(projection, 90, (float)m_viewWidth / (float)m_viewHeight,5.0,10000);
+    mtxLoadTranslate(modelView, 0.0, 0.0, 0.0);
     
     
     // Multiply the modelview and projection matrix and set it in the shader
@@ -160,6 +156,8 @@ GLboolean m_useVBOs;
 	//   thus the the inverse tranpose is the same thing
 	mtx3x3FromTopLeftOf4x4(normalMatrix2, modelView);
 	
+    
+    
     
 	// Set the normal matrix for our shader to use
     
@@ -806,7 +804,7 @@ static GLsizei GetGLTypeSize(GLenum type)
 		// Load our character model //
 		//////////////////////////////
 		
-		filePathName = [[NSBundle mainBundle] pathForResource:@"dreidelTextured" ofType:@"obj"];
+		filePathName = [[NSBundle mainBundle] pathForResource:@"cube" ofType:@"obj"];
 		m_characterModel = loadFile([filePathName cStringUsingEncoding:NSASCIIStringEncoding]);
 		
 		// Build Vertex Buffer Objects (VBOs) and Vertex Array Object (VAOs) with our model data

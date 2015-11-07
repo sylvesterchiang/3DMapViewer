@@ -30,6 +30,7 @@
 		EF091E7B1AAEB55F00013CFC /* DreidelTextureMap.png in Resources */ = {isa = PBXBuildFile; fileRef = EF091E7A1AAEB55F00013CFC /* DreidelTextureMap.png */; };
 		EF091E7F1AAEB80000013CFC /* dreidelTextured.obj in Resources */ = {isa = PBXBuildFile; fileRef = EF091E7E1AAEB80000013CFC /* dreidelTextured.obj */; };
 		EF516F7C1BEDA17600FE89ED /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF516F7B1BEDA17600FE89ED /* CoreMotion.framework */; };
+		EF69C4E71BEE386E008A9A3D /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = EF69C4E61BEE386E008A9A3D /* cube.obj */; };
 		EFBC9DE61AB67C4200496BE6 /* GLDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		EF091E7A1AAEB55F00013CFC /* DreidelTextureMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DreidelTextureMap.png; sourceTree = "<group>"; };
 		EF091E7E1AAEB80000013CFC /* dreidelTextured.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dreidelTextured.obj; sourceTree = "<group>"; };
 		EF516F7B1BEDA17600FE89ED /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		EF69C4E61BEE386E008A9A3D /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
 		EFBC9DE41AB67C4200496BE6 /* GLDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLDataModel.h; path = iOS/GLDataModel.h; sourceTree = "<group>"; };
 		EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLDataModel.m; path = iOS/GLDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +160,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF69C4E61BEE386E008A9A3D /* cube.obj */,
 				EF091E7E1AAEB80000013CFC /* dreidelTextured.obj */,
 				EF091E7A1AAEB55F00013CFC /* DreidelTextureMap.png */,
 				3AE0447513D624E400F51EF4 /* MainWindow.xib */,
@@ -251,6 +254,7 @@
 				3A609E6311B9DB9400AA4C48 /* character.fsh in Resources */,
 				3AE0447613D624E400F51EF4 /* MainWindow.xib in Resources */,
 				3AC5C4A816693B6C00FEE565 /* Default-568h@2x.png in Resources */,
+				EF69C4E71BEE386E008A9A3D /* cube.obj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

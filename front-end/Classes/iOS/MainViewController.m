@@ -73,7 +73,7 @@
     
     [motionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion *data, NSError *error){
         glView.dataObj.rotationY = 180.0*data.attitude.roll/M_PI;
-        glView.dataObj.rotationX = 180.0*data.attitude.pitch/M_PI;
+//        glView.dataObj.rotationX = 180.0*data.attitude.pitch/M_PI;
         glView.dataObj.rotationZ = 180.0*data.attitude.yaw/M_PI;
     }];
     
