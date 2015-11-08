@@ -217,17 +217,19 @@ float rot = 0.0;
 	// with an inverted matrix
 	glCullFace(GL_BACK);
     
+    if (self.dataObj.ready) {
     
-    // Draw our character
-    if(m_useVBOs)
-    {
-        glDrawElements(GL_TRIANGLES, m_characterNumElements, m_characterElementType, 0);
-    }
-    else
-    {
-        glDrawElements(GL_TRIANGLES, m_characterNumElements, m_characterElementType, m_characterModel->elements);
-    }
+        // Draw our character
+        if(m_useVBOs)
+        {
+            glDrawElements(GL_TRIANGLES, m_characterNumElements, m_characterElementType, 0);
+        }
+        else
+        {
+            glDrawElements(GL_TRIANGLES, m_characterNumElements, m_characterElementType, m_characterModel->elements);
+        }
 
+    }
     
 }
 
@@ -877,7 +879,7 @@ static GLsizei GetGLTypeSize(GLenum type)
 		// Load texture for our character //
 		////////////////////////////////////
 		
-		filePathName = [[NSBundle mainBundle] pathForResource:@"ball1" ofType:@"png"];
+		filePathName = [[NSBundle mainBundle] pathForResource:@"boulder_texture" ofType:@"jpg"];
 		demoImage *image = imgLoadImage([filePathName cStringUsingEncoding:NSASCIIStringEncoding], false);
 		
 		// Build a texture object with our image data

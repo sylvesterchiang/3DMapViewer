@@ -164,10 +164,11 @@ float yaw;
     
     NSOperationQueue *queue = [NSOperationQueue new];
     
-    
     [motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXTrueNorthZVertical toQueue:queue withHandler:^(CMDeviceMotion *data, NSError *error){
 //        yaw = data.attitude.yaw+M_PI;
+        
         glView.dataObj.rMat = data.attitude.rotationMatrix;
+        glView.dataObj.ready = true;
 //        NSLog(@"%f",yaw);
     }];
     
@@ -177,6 +178,8 @@ float yaw;
     self.view.backgroundColor = [UIColor purpleColor];
     
     glView.dataObj = [GLDataModel new];
+    
+    glView.dataObj.ready = false;
     
     glView.dataObj.alpha = 1.0;
     
@@ -193,7 +196,19 @@ float yaw;
     notificationHUD.alpha = 0.0;
     
     [super viewDidLoad];
+    
+    dyingView = [UIView new];
+    dyingView.bounds = self.view.bounds;
+    dyingView.center = self.view.center;
+    [dyingView setAlpha:0.0];
+    
+    [dyingView setBackgroundColor:[UIColor redColor]];
+    [self.view addSubview:dyingView];
+    
 }
+
+UIView *dyingView;
+float dAlpha;
 
 - (void)didReceiveMemoryWarning
 {
@@ -215,7 +230,19 @@ float yaw;
 
 bool isBouncing = false;
 -(void)bounceTimer{
-            glView.dataObj.bounceZ-=.05;
+    glView.dataObj.bounceZ-=.05;
+
+    float closeness = abs(1000.0+glView.dataObj.bounceZ);
+    
+    float dis = 170.0;
+    
+    if (closeness < dis) {
+        [dyingView setAlpha:(dis-closeness)/dis];
+    }
+    else{
+        [dyingView setAlpha:0.0];
+    }
+    
 }
 
 -(void)grabLoc{

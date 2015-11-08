@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 @interface GLDataModel : NSObject
 @property (nonatomic) CMRotationMatrix rMat;
+@property (nonatomic) BOOL ready;
 @property (nonatomic) float texNum;
 @property (nonatomic) float bounceZ;
 @property (nonatomic) float yaw;
