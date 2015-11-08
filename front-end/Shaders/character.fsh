@@ -67,6 +67,7 @@ varying vec3 varNormal;
 #endif
 
 uniform sampler2D diffuseTexture;
+uniform float alpha;
 float NdotL;
 
 void main (void)
@@ -75,7 +76,11 @@ void main (void)
 	fragColor = texture(diffuseTexture, varTexcoord.st, 0.0);
 	#else
     NdotL = dot(varNormal, vec3(0.0,0.0,1.0));
-    gl_FragColor = texture2D(diffuseTexture, varTexcoord.st, 0.0);
+    
+    vec4 clr = texture2D(diffuseTexture, varTexcoord.st, 0.0);
+    clr.a = alpha;
+    
+    gl_FragColor = clr;
 	#endif
     
     //texture2D(diffuseTexture, varTexcoord.st, 0.0);

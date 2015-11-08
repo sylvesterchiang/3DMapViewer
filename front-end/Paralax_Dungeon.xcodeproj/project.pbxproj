@@ -40,6 +40,7 @@
 		EF69C5041BEE9B8A008A9A3D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF69C5031BEE9B8A008A9A3D /* AVFoundation.framework */; };
 		EF69C5071BEEA1D3008A9A3D /* myFilter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = EF69C5051BEEA1D3008A9A3D /* myFilter.fsh */; };
 		EF69C5081BEEA1D3008A9A3D /* myFilter.vsh in Resources */ = {isa = PBXBuildFile; fileRef = EF69C5061BEEA1D3008A9A3D /* myFilter.vsh */; };
+		EF6A54751BEEC6B100380D08 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF6A54741BEEC6B100380D08 /* CoreLocation.framework */; };
 		EFBC9DE61AB67C4200496BE6 /* GLDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		EF69C5031BEE9B8A008A9A3D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EF69C5051BEEA1D3008A9A3D /* myFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = myFilter.fsh; sourceTree = "<group>"; };
 		EF69C5061BEEA1D3008A9A3D /* myFilter.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = myFilter.vsh; sourceTree = "<group>"; };
+		EF6A54741BEEC6B100380D08 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EFBC9DE41AB67C4200496BE6 /* GLDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLDataModel.h; path = iOS/GLDataModel.h; sourceTree = "<group>"; };
 		EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLDataModel.m; path = iOS/GLDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF6A54751BEEC6B100380D08 /* CoreLocation.framework in Frameworks */,
 				EF69C5041BEE9B8A008A9A3D /* AVFoundation.framework in Frameworks */,
 				EF69C5021BEE9B7F008A9A3D /* AssetsLibrary.framework in Frameworks */,
 				EF69C5001BEE9B78008A9A3D /* CoreVideo.framework in Frameworks */,
@@ -197,6 +200,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF6A54741BEEC6B100380D08 /* CoreLocation.framework */,
 				EF69C5031BEE9B8A008A9A3D /* AVFoundation.framework */,
 				EF69C5011BEE9B7F008A9A3D /* AssetsLibrary.framework */,
 				EF69C4FF1BEE9B78008A9A3D /* CoreVideo.framework */,

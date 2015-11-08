@@ -78,8 +78,11 @@
     //----- ADD INPUTS -----
     NSLog(@"Adding video input");
     
-    //ADD VIDEO INPUT
-    AVCaptureDevice *VideoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+
+    
+    
+    AVCaptureDevice *VideoDevice = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+    
     if (VideoDevice)
     {
         NSError *error;
@@ -146,8 +149,13 @@
     [CaptureSession startRunning];
 }
 
+
+float yaw;
+
 - (void)viewDidLoad
 {
+    [self startLocationGrab];
+    
     [self setupCameraDisplay];
     
     
@@ -158,9 +166,9 @@
     
     
     [motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXTrueNorthZVertical toQueue:queue withHandler:^(CMDeviceMotion *data, NSError *error){
-        
+        yaw = data.attitude.yaw+M_PI;
         glView.dataObj.rMat = data.attitude.rotationMatrix;
-        
+        NSLog(@"%f",yaw);
     }];
     
     glView.opaque = NO; // NB: Apple DELETES THIS VALUE FROM NIB
@@ -172,9 +180,10 @@
     
     [self.view bringSubviewToFront:glView];
     
+    [NSTimer scheduledTimerWithTimeInterval:.001 target:self selector:@selector(bounceTimer) userInfo:nil repeats:YES];
+    
     [super viewDidLoad];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -193,5 +202,73 @@
     [alertView show];
     [alertView release];
 }
+
+bool isBouncing;
+-(void)bounceTimer{
+    if (!isBouncing) {
+        if (glView.dataObj.bounceZ > 0) {
+            glView.dataObj.bounceZ--;
+            glView.dataObj.alpha = MAX(0,glView.dataObj.alpha - .002);
+        }
+    }
+    else{
+        glView.dataObj.alpha = 1.0;
+        if (glView.dataObj.bounceZ < 500) {
+            glView.dataObj.bounceZ++;
+        }
+    }
+}
+
+-(void)grabLoc{
+    
+}
+
+float lastHA = 13248789324.0;
+
+
+#pragma mark - LOCATION
+
+-(void)startLocationGrab{
+    _locationManager = [[CLLocationManager alloc] init];
+    [_locationManager requestAlwaysAuthorization];
+    _locationManager.delegate = self;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    [_locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    
+}
+
+bool first = true;
+double iLat;
+double iLong;
+
+int i = 0;
+
+double sLa = 41.3144313;
+double sLo = -72.93071;
+
+double cLa = 0.0;
+double cLo = 0.0;
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    if (newLocation.horizontalAccuracy >= oldLocation.horizontalAccuracy) {
+        cLa = newLocation.coordinate.latitude;
+        cLo = newLocation.coordinate.longitude;
+        
+       
+    }
+}
+
+
+-(IBAction)startAnimation{
+    glView.dataObj.yaw = isBouncing ? glView.dataObj.yaw : yaw;
+    isBouncing = !isBouncing;
+}
+
+double calib = 4000000.0;
 
 @end

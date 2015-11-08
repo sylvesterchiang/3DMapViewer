@@ -110,6 +110,8 @@ GLboolean m_useVBOs;
 	m_viewHeight = height;
 }
 
+float rot = 0.0;
+
 - (void) render
 {
     glClearColor( 0, 0, 0, 0.0);
@@ -119,7 +121,7 @@ GLboolean m_useVBOs;
 	GLfloat projection[16];
 	GLfloat mvp[16];
 	
-//    glDisable(GL_CULL_FACE);
+    glDisable(GL_CULL_FACE);
     
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
@@ -128,7 +130,11 @@ GLboolean m_useVBOs;
     
     
 	// Calculate the projection matrix
-    mtxLoadPerspective(projection, 90, (float)m_viewWidth / (float)m_viewHeight,5.0,10000);
+    mtxLoadPerspective(projection, 90, (float)m_viewWidth / (float)m_viewHeight,1.0,5000.0);
+    
+    
+    
+    
     
     
     if(self.dataObj){
@@ -151,7 +157,11 @@ GLboolean m_useVBOs;
         }
     }
     
-    mtxLoadTranslate(modelView, 500.0, 0.0, 0.0);
+    
+    
+    mtxLoadTranslate(modelView,500.0*cos(self.dataObj.yaw+M_PI),500.0*sin(self.dataObj.yaw+M_PI),500.0-self.dataObj.bounceZ);
+    
+    mtxRotateZApply(modelView,rot++);
     
     // Multiply the modelview and projection matrix and set it in the shader
     mtxMultiply(mvp, projection, modelView);
@@ -180,6 +190,8 @@ GLboolean m_useVBOs;
 	mtx3x3FromTopLeftOf4x4(normalMatrix2, modelView);
 	
     
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_DST_ALPHA);
     
     
 	// Set the normal matrix for our shader to use
@@ -187,21 +199,25 @@ GLboolean m_useVBOs;
     int no = glGetUniformLocation(m_characterPrgName,"normalMatrix");
 	glUniformMatrix3fv(no, 1, GL_FALSE, normalMatrix2);
     
-	
+    int au = glGetUniformLocation(m_characterPrgName, "alpha");
+    glUniform1f(au, self.dataObj.alpha);
+    
 	// Cull back faces now that we no longer render 
 	// with an inverted matrix
 	glCullFace(GL_BACK);
-	
-	// Draw our character
-	if(m_useVBOs)
-	{
-		glDrawElements(GL_TRIANGLES, m_characterNumElements, m_characterElementType, 0);
-	}
-	else 
-	{
-		glDrawElements(GL_TRIANGLES, m_characterNumElements, m_characterElementType, m_characterModel->elements);
-	}
+    
+    
+    // Draw our character
+    if(m_useVBOs)
+    {
+        glDrawElements(GL_TRIANGLES, m_characterNumElements, m_characterElementType, 0);
+    }
+    else
+    {
+        glDrawElements(GL_TRIANGLES, m_characterNumElements, m_characterElementType, m_characterModel->elements);
+    }
 
+    
 }
 
 static GLsizei GetGLTypeSize(GLenum type)
@@ -827,7 +843,7 @@ static GLsizei GetGLTypeSize(GLenum type)
 		// Load our character model //
 		//////////////////////////////
 		
-		filePathName = [[NSBundle mainBundle] pathForResource:@"dreidelTextured" ofType:@"obj"];
+		filePathName = [[NSBundle mainBundle] pathForResource:@"Cube_Textured" ofType:@"obj"];
 		m_characterModel = loadFile([filePathName cStringUsingEncoding:NSASCIIStringEncoding]);
 		
 		// Build Vertex Buffer Objects (VBOs) and Vertex Array Object (VAOs) with our model data
@@ -851,7 +867,7 @@ static GLsizei GetGLTypeSize(GLenum type)
 		// Load texture for our character //
 		////////////////////////////////////
 		
-		filePathName = [[NSBundle mainBundle] pathForResource:@"DreidelTextureMap" ofType:@"png"];
+		filePathName = [[NSBundle mainBundle] pathForResource:@"Cube" ofType:@"png"];
 		demoImage *image = imgLoadImage([filePathName cStringUsingEncoding:NSASCIIStringEncoding], false);
 		
 		// Build a texture object with our image data

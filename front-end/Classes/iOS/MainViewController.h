@@ -49,15 +49,23 @@
 #import "EAGLView.h"
 #import <CoreMotion/CoreMotion.h>
 #import <AVFoundation/AVFoundation.h>
-@interface MainViewController : UIViewController <AVCaptureAudioDataOutputSampleBufferDelegate>
+#import <CoreLocation/CoreLocation.h>
+@interface MainViewController : UIViewController <AVCaptureAudioDataOutputSampleBufferDelegate,CLLocationManagerDelegate>
 {
     IBOutlet EAGLView *glView;
     IBOutlet UIView *CameraView;
+    IBOutlet UITextView *lalbl;
+    IBOutlet UITextView *lolbl;
+    
+    
+    
+    
     CMMotionManager *motionManager;
     AVCaptureSession *CaptureSession;
     AVCaptureDeviceInput *VideoInputDevice;
+    NSTimer *timer;
 }
-
+-(IBAction)startAnimation;
+@property (nonatomic,strong) CLLocationManager *locationManager;
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *PreviewLayer;
-
 @end
