@@ -20,13 +20,13 @@
 		3A609E6311B9DB9400AA4C48 /* character.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 3A609E5F11B9DB9400AA4C48 /* character.fsh */; };
 		3A609EB911B9DCF200AA4C48 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A609EB811B9DCF200AA4C48 /* QuartzCore.framework */; };
 		3A7DCEBE14BE4E9C00C51D27 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DCEBD14BE4E9C00C51D27 /* EAGLView.m */; };
-		3AC5C4A816693B6C00FEE565 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC5C4A716693B6C00FEE565 /* Default-568h@2x.png */; };
 		3AE0447613D624E400F51EF4 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE0447513D624E400F51EF4 /* MainWindow.xib */; };
 		3AE0447E13D6252E00F51EF4 /* ES2Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0447B13D6252E00F51EF4 /* ES2Renderer.m */; };
 		3AE0447F13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0447D13D6252E00F51EF4 /* iOSGLEssentialsAppDelegate.m */; };
 		3AE9119712CAF36A005ED635 /* sourceUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9119612CAF36A005ED635 /* sourceUtil.c */; };
 		44BBBA3B1BEE53BE00119855 /* Cube_Textured.obj in Resources */ = {isa = PBXBuildFile; fileRef = 44BBBA3A1BEE53BE00119855 /* Cube_Textured.obj */; };
 		44BBBA3D1BEE53C900119855 /* Cube.png in Resources */ = {isa = PBXBuildFile; fileRef = 44BBBA3C1BEE53C900119855 /* Cube.png */; };
+		44CA1E2B1BEF6068008C1289 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44CA1E2A1BEF6068008C1289 /* Default-568h@2x.png */; };
 		537E51341635EC17003EA7BA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 537E51331635EC17003EA7BA /* MainViewController.m */; };
 		9E148C8916E16187001BA26D /* modelUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 9E148C8816E16187001BA26D /* modelUtil.c */; };
 		EF091E7B1AAEB55F00013CFC /* DreidelTextureMap.png in Resources */ = {isa = PBXBuildFile; fileRef = EF091E7A1AAEB55F00013CFC /* DreidelTextureMap.png */; };
@@ -72,7 +72,6 @@
 		3A609EB811B9DCF200AA4C48 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3A7DCEBC14BE4E9C00C51D27 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAGLView.h; path = iOS/EAGLView.h; sourceTree = "<group>"; };
 		3A7DCEBD14BE4E9C00C51D27 /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EAGLView.m; path = iOS/EAGLView.m; sourceTree = "<group>"; };
-		3AC5C4A716693B6C00FEE565 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3AE0447513D624E400F51EF4 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = Resources/iOS/MainWindow.xib; sourceTree = "<group>"; };
 		3AE0447A13D6252E00F51EF4 /* ES2Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ES2Renderer.h; path = iOS/ES2Renderer.h; sourceTree = "<group>"; };
 		3AE0447B13D6252E00F51EF4 /* ES2Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ES2Renderer.m; path = iOS/ES2Renderer.m; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		3AE9119612CAF36A005ED635 /* sourceUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sourceUtil.c; path = UtilSrc/sourceUtil.c; sourceTree = "<group>"; };
 		44BBBA3A1BEE53BE00119855 /* Cube_Textured.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cube_Textured.obj; sourceTree = "<group>"; };
 		44BBBA3C1BEE53C900119855 /* Cube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cube.png; sourceTree = "<group>"; };
+		44CA1E2A1BEF6068008C1289 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		537E51321635EC17003EA7BA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = iOS/MainViewController.h; sourceTree = "<group>"; };
 		537E51331635EC17003EA7BA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = iOS/MainViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Paralax_Dungeon-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Paralax_Dungeon-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				3AC5C4A716693B6C00FEE565 /* Default-568h@2x.png */,
+				44CA1E2A1BEF6068008C1289 /* Default-568h@2x.png */,
 				AF31B2271301C52D006A0A99 /* Readme.txt */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -304,12 +304,12 @@
 				EF6A54771BEF3A4600380D08 /* libaryball.obj in Resources */,
 				EF6A54791BEF3C0000380D08 /* ball1.png in Resources */,
 				EF091E7F1AAEB80000013CFC /* dreidelTextured.obj in Resources */,
+				44CA1E2B1BEF6068008C1289 /* Default-568h@2x.png in Resources */,
 				EF6A547B1BEF427B00380D08 /* ball2.png in Resources */,
 				3A609E6311B9DB9400AA4C48 /* character.fsh in Resources */,
 				3AE0447613D624E400F51EF4 /* MainWindow.xib in Resources */,
 				44BBBA3B1BEE53BE00119855 /* Cube_Textured.obj in Resources */,
 				EF6A547D1BEF428500380D08 /* ball3.png in Resources */,
-				3AC5C4A816693B6C00FEE565 /* Default-568h@2x.png in Resources */,
 				EF69C4E71BEE386E008A9A3D /* cube.obj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
