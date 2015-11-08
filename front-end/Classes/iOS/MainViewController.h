@@ -66,7 +66,7 @@
     
     int nearLoc;
     
-    CGPoint locs[3];
+    CGPoint locs[4];
     
 }
 -(IBAction)startAnimation;

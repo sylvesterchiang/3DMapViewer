@@ -91,6 +91,7 @@ GLuint m_characterVAOName;
 GLuint m_characterTexName;
 GLuint m_characterTexName2;
 GLuint m_characterTexName3;
+GLuint m_characterTexName4;
 demoModel* m_characterModel;
 GLenum m_characterPrimType;
 GLenum m_characterElementType;
@@ -183,6 +184,10 @@ float rot = 0.0;
     else if(self.dataObj.texNum == 2){
         // Bind the texture to be used
         glBindTexture(GL_TEXTURE_2D, m_characterTexName3);
+    }
+    else if(self.dataObj.texNum == 3){
+        // Bind the texture to be used
+        glBindTexture(GL_TEXTURE_2D, m_characterTexName4);
     }
     
     
@@ -904,6 +909,16 @@ static GLsizei GetGLTypeSize(GLenum type)
         
         // Build a texture object with our image data
         m_characterTexName3 = [self buildTexture:image];
+        
+        // We can destroy the image once it's loaded into GL
+        imgDestroyImage(image);
+        
+        
+        filePathName = [[NSBundle mainBundle] pathForResource:@"ball4" ofType:@"png"];
+        image = imgLoadImage([filePathName cStringUsingEncoding:NSASCIIStringEncoding], false);
+        
+        // Build a texture object with our image data
+        m_characterTexName4 = [self buildTexture:image];
         
         // We can destroy the image once it's loaded into GL
         imgDestroyImage(image);

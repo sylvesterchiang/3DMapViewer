@@ -188,6 +188,8 @@ float yaw;
     
     locs[2] = CGPointMake(41.308185, -72.926174);
     
+    locs[3] = CGPointMake(41.311599, -72.926305);
+    
     notificationHUD.alpha = 0.0;
     
     [super viewDidLoad];
@@ -267,7 +269,7 @@ double cLo = 0.0;
         cLa = newLocation.coordinate.latitude;
         cLo = newLocation.coordinate.longitude;
         if(!isBouncing){
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 4; i++) {
                 CGPoint pt = locs[i];
                 if (sqrt(pow(cLa - pt.x,2.0) + pow(cLo - pt.y,2.0)) < 0.001) {
                     nearLoc = i;
