@@ -263,7 +263,7 @@ double cLo = 0.0;
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-//    if (newLocation.horizontalAccuracy >= oldLocation.horizontalAccuracy) {
+    if (newLocation.horizontalAccuracy >= oldLocation.horizontalAccuracy) {
         cLa = newLocation.coordinate.latitude;
         cLo = newLocation.coordinate.longitude;
         if(!isBouncing){
@@ -277,7 +277,7 @@ double cLo = 0.0;
             }
         }
        
-//    }
+    }
 }
 
 
