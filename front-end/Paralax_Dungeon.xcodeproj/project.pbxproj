@@ -41,6 +41,10 @@
 		EF69C5071BEEA1D3008A9A3D /* myFilter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = EF69C5051BEEA1D3008A9A3D /* myFilter.fsh */; };
 		EF69C5081BEEA1D3008A9A3D /* myFilter.vsh in Resources */ = {isa = PBXBuildFile; fileRef = EF69C5061BEEA1D3008A9A3D /* myFilter.vsh */; };
 		EF6A54751BEEC6B100380D08 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF6A54741BEEC6B100380D08 /* CoreLocation.framework */; };
+		EF6A54771BEF3A4600380D08 /* libaryball.obj in Resources */ = {isa = PBXBuildFile; fileRef = EF6A54761BEF3A4600380D08 /* libaryball.obj */; };
+		EF6A54791BEF3C0000380D08 /* ball1.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6A54781BEF3C0000380D08 /* ball1.png */; };
+		EF6A547B1BEF427B00380D08 /* ball2.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6A547A1BEF427B00380D08 /* ball2.png */; };
+		EF6A547D1BEF428500380D08 /* ball3.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6A547C1BEF428500380D08 /* ball3.png */; };
 		EFBC9DE61AB67C4200496BE6 /* GLDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +98,10 @@
 		EF69C5051BEEA1D3008A9A3D /* myFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = myFilter.fsh; sourceTree = "<group>"; };
 		EF69C5061BEEA1D3008A9A3D /* myFilter.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = myFilter.vsh; sourceTree = "<group>"; };
 		EF6A54741BEEC6B100380D08 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EF6A54761BEF3A4600380D08 /* libaryball.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libaryball.obj; sourceTree = "<group>"; };
+		EF6A54781BEF3C0000380D08 /* ball1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball1.png; sourceTree = "<group>"; };
+		EF6A547A1BEF427B00380D08 /* ball2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball2.png; sourceTree = "<group>"; };
+		EF6A547C1BEF428500380D08 /* ball3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball3.png; sourceTree = "<group>"; };
 		EFBC9DE41AB67C4200496BE6 /* GLDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLDataModel.h; path = iOS/GLDataModel.h; sourceTree = "<group>"; };
 		EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLDataModel.m; path = iOS/GLDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +194,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF6A54761BEF3A4600380D08 /* libaryball.obj */,
+				EF6A547A1BEF427B00380D08 /* ball2.png */,
+				EF6A54781BEF3C0000380D08 /* ball1.png */,
+				EF6A547C1BEF428500380D08 /* ball3.png */,
 				EF69C4E61BEE386E008A9A3D /* cube.obj */,
 				44BBBA3C1BEE53C900119855 /* Cube.png */,
 				44BBBA3A1BEE53BE00119855 /* Cube_Textured.obj */,
@@ -289,10 +301,14 @@
 				EF69C5081BEEA1D3008A9A3D /* myFilter.vsh in Resources */,
 				3A609E6211B9DB9400AA4C48 /* character.vsh in Resources */,
 				EF69C5071BEEA1D3008A9A3D /* myFilter.fsh in Resources */,
+				EF6A54771BEF3A4600380D08 /* libaryball.obj in Resources */,
+				EF6A54791BEF3C0000380D08 /* ball1.png in Resources */,
 				EF091E7F1AAEB80000013CFC /* dreidelTextured.obj in Resources */,
+				EF6A547B1BEF427B00380D08 /* ball2.png in Resources */,
 				3A609E6311B9DB9400AA4C48 /* character.fsh in Resources */,
 				3AE0447613D624E400F51EF4 /* MainWindow.xib in Resources */,
 				44BBBA3B1BEE53BE00119855 /* Cube_Textured.obj in Resources */,
+				EF6A547D1BEF428500380D08 /* ball3.png in Resources */,
 				3AC5C4A816693B6C00FEE565 /* Default-568h@2x.png in Resources */,
 				EF69C4E71BEE386E008A9A3D /* cube.obj in Resources */,
 			);

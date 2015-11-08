@@ -89,6 +89,8 @@ GLuint m_characterPrgName;
 GLint m_characterMvpUniformIdx;
 GLuint m_characterVAOName;
 GLuint m_characterTexName;
+GLuint m_characterTexName2;
+GLuint m_characterTexName3;
 demoModel* m_characterModel;
 GLenum m_characterPrimType;
 GLenum m_characterElementType;
@@ -170,8 +172,21 @@ float rot = 0.0;
 	// that we calculated above
 	glUniformMatrix4fv(m_characterMvpUniformIdx, 1, GL_FALSE, mvp);
 	
-	// Bind the texture to be used
-	glBindTexture(GL_TEXTURE_2D, m_characterTexName);
+    if (self.dataObj.texNum == 0) {
+        // Bind the texture to be used
+        glBindTexture(GL_TEXTURE_2D, m_characterTexName);
+    }
+    else if(self.dataObj.texNum == 1){
+        // Bind the texture to be used
+        glBindTexture(GL_TEXTURE_2D, m_characterTexName2);
+    }
+    else if(self.dataObj.texNum == 2){
+        // Bind the texture to be used
+        glBindTexture(GL_TEXTURE_2D, m_characterTexName3);
+    }
+    
+    
+	
 	
 	// Bind our vertex array object
 	glBindVertexArray(m_characterVAOName);
@@ -843,7 +858,7 @@ static GLsizei GetGLTypeSize(GLenum type)
 		// Load our character model //
 		//////////////////////////////
 		
-		filePathName = [[NSBundle mainBundle] pathForResource:@"Cube_Textured" ofType:@"obj"];
+		filePathName = [[NSBundle mainBundle] pathForResource:@"libaryball" ofType:@"obj"];
 		m_characterModel = loadFile([filePathName cStringUsingEncoding:NSASCIIStringEncoding]);
 		
 		// Build Vertex Buffer Objects (VBOs) and Vertex Array Object (VAOs) with our model data
@@ -861,13 +876,12 @@ static GLsizei GetGLTypeSize(GLenum type)
 			mdlDestroyModel(m_characterModel);
 			m_characterModel = NULL;
 		}
-	
 		
 		////////////////////////////////////
 		// Load texture for our character //
 		////////////////////////////////////
 		
-		filePathName = [[NSBundle mainBundle] pathForResource:@"Cube" ofType:@"png"];
+		filePathName = [[NSBundle mainBundle] pathForResource:@"ball1" ofType:@"png"];
 		demoImage *image = imgLoadImage([filePathName cStringUsingEncoding:NSASCIIStringEncoding], false);
 		
 		// Build a texture object with our image data
@@ -876,6 +890,25 @@ static GLsizei GetGLTypeSize(GLenum type)
 		// We can destroy the image once it's loaded into GL
 		imgDestroyImage(image);
 	
+        filePathName = [[NSBundle mainBundle] pathForResource:@"ball2" ofType:@"png"];
+        image = imgLoadImage([filePathName cStringUsingEncoding:NSASCIIStringEncoding], false);
+        
+        // Build a texture object with our image data
+        m_characterTexName2 = [self buildTexture:image];
+        
+        // We can destroy the image once it's loaded into GL
+        imgDestroyImage(image);
+        
+        filePathName = [[NSBundle mainBundle] pathForResource:@"ball3" ofType:@"png"];
+        image = imgLoadImage([filePathName cStringUsingEncoding:NSASCIIStringEncoding], false);
+        
+        // Build a texture object with our image data
+        m_characterTexName3 = [self buildTexture:image];
+        
+        // We can destroy the image once it's loaded into GL
+        imgDestroyImage(image);
+        
+        
 		
 		////////////////////////////////////////////////////
 		// Load and Setup shaders for character rendering //

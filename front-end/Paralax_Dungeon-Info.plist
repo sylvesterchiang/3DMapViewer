@@ -24,16 +24,18 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMainNibFile</key>
-	<string>MainWindow</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Please enable location services so Baas can find bikes near you</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Please enable location services so Baas can find bikes near you</string>
+	<key>NSMainNibFile</key>
+	<string>MainWindow</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>opengles-2</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

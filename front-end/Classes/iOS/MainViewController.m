@@ -182,6 +182,14 @@ float yaw;
     
     [NSTimer scheduledTimerWithTimeInterval:.001 target:self selector:@selector(bounceTimer) userInfo:nil repeats:YES];
     
+    locs[0] = CGPointMake(41.311239, -72.929104);
+    
+    locs[1] = CGPointMake(41.314113, -72.930792);
+    
+    locs[2] = CGPointMake(41.308185, -72.926174);
+    
+    notificationHUD.alpha = 0.0;
+    
     [super viewDidLoad];
 }
 
@@ -203,16 +211,19 @@ float yaw;
     [alertView release];
 }
 
-bool isBouncing;
+bool isBouncing = false;
 -(void)bounceTimer{
     if (!isBouncing) {
         if (glView.dataObj.bounceZ > 0) {
             glView.dataObj.bounceZ--;
             glView.dataObj.alpha = MAX(0,glView.dataObj.alpha - .002);
+            notificationHUD.alpha = MAX(0,notificationHUD.alpha - .002);
         }
     }
     else{
+        glView.dataObj.texNum = nearLoc;
         glView.dataObj.alpha = 1.0;
+        notificationHUD.alpha = 1.0;
         if (glView.dataObj.bounceZ < 500) {
             glView.dataObj.bounceZ++;
         }
@@ -247,26 +258,36 @@ double iLong;
 
 int i = 0;
 
-double sLa = 41.3144313;
-double sLo = -72.93071;
-
 double cLa = 0.0;
 double cLo = 0.0;
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    if (newLocation.horizontalAccuracy >= oldLocation.horizontalAccuracy) {
+//    if (newLocation.horizontalAccuracy >= oldLocation.horizontalAccuracy) {
         cLa = newLocation.coordinate.latitude;
         cLo = newLocation.coordinate.longitude;
-        
+        if(!isBouncing){
+            for (int i = 0; i < 3; i++) {
+                CGPoint pt = locs[i];
+                if (sqrt(pow(cLa - pt.x,2.0) + pow(cLo - pt.y,2.0)) < 0.001) {
+                    nearLoc = i;
+                    [self startAnimation];
+                    break;
+                }
+            }
+        }
        
-    }
+//    }
 }
 
 
 -(IBAction)startAnimation{
-    glView.dataObj.yaw = isBouncing ? glView.dataObj.yaw : yaw;
-    isBouncing = !isBouncing;
+    glView.dataObj.yaw = yaw;
+    isBouncing = true;
+}
+
+-(IBAction)dismissBubble:(id)sender{
+    isBouncing = false;
 }
 
 double calib = 4000000.0;

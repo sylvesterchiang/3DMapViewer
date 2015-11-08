@@ -57,13 +57,17 @@
     IBOutlet UITextView *lalbl;
     IBOutlet UITextView *lolbl;
     
-    
-    
+    IBOutlet UIView *notificationHUD;
     
     CMMotionManager *motionManager;
     AVCaptureSession *CaptureSession;
     AVCaptureDeviceInput *VideoInputDevice;
     NSTimer *timer;
+    
+    int nearLoc;
+    
+    CGPoint locs[3];
+    
 }
 -(IBAction)startAnimation;
 @property (nonatomic,strong) CLLocationManager *locationManager;

@@ -43,14 +43,25 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccX-TN-bIX" customClass="EAGLView">
                         <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiS-Yc-eJn">
-                                <rect key="frame" x="235" y="420" width="46" height="30"/>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zK8-KV-JDS">
+                                <rect key="frame" x="220" y="38" width="76" height="39"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvp-iv-4nN">
+                                        <rect key="frame" x="48" y="0.0" width="28" height="35"/>
+                                        <animations/>
+                                        <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="dismissBubble:" destination="19" eventType="touchUpInside" id="XXQ-45-NKt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y37-Nm-wO9">
+                                        <rect key="frame" x="18" y="9" width="22" height="22"/>
+                                        <animations/>
+                                    </button>
+                                </subviews>
                                 <animations/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="startAnimation" destination="19" eventType="touchUpInside" id="dKF-IA-dgz"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,6 +85,7 @@
             <connections>
                 <outlet property="CameraView" destination="31z-CN-Xbr" id="YeJ-S4-jNA"/>
                 <outlet property="glView" destination="ccX-TN-bIX" id="rO8-co-8cC"/>
+                <outlet property="notificationHUD" destination="zK8-KV-JDS" id="UdI-zK-2XR"/>
             </connections>
         </viewController>
         <view contentMode="scaleToFill" id="czf-b6-yLa">
@@ -88,5 +100,11 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Am3-pP-09h">
+            <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <animations/>
+            <state key="normal" title="Button"/>
+        </button>
     </objects>
 </document>

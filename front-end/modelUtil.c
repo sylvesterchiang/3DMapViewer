@@ -344,7 +344,7 @@ demoModel* loadFile(const char* filepathname){
     
     
     FILE* f = fopen(filepathname, "r");
-    char as[200] = "";
+    char as[400] = "";
     
     
     GLuint vsize = 0;
@@ -356,7 +356,7 @@ demoModel* loadFile(const char* filepathname){
      * Scan through the .obj file and determine number of verticies, texture coords, and normals
      */
     
-    while (fgets(as,200,f)!=NULL){
+    while (fgets(as,400,f)!=NULL){
         
         
         if(as[0]=='v'){
