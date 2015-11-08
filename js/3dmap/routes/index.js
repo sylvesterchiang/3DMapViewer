@@ -20,15 +20,16 @@ router.get('/', function(req, res, next) {
 
   var consoleCallback = console.log;
 
-  var altitudeCallback = function(response){
+  var altitudeCallback = function(resp){
   	console.log('altitude callback');
   	var body = '';
 
-  	response.on('data', function(d){
+  	resp.on('data', function(d){
   		body += d;
   	});
 
-  	response.on('end', function(){
+  	resp.on('end', function(){
+  		console.log(res.headersSent);
   		result = JSON.parse(body);
 
   		for (var i = 0; i < result.results.length; i++){
@@ -36,32 +37,8 @@ router.get('/', function(req, res, next) {
   			console.log(result.results[i].elevation);
   		}
 
-  		console.log(res.headerSent)
+  		console.log(res.headersSent)
   		res.send(directions);
-  		/*result = JSON.parse(body);
-  		console.log(result);
-  		var elevation = result.results[0].elevation;
-  		console.log('elevation')
-  		var lat = result.results[0].location.lat;
-  		var lng = result.results[0].location.lng;
-
-  		for (var i = 0; i < directions.length; i++){
-  			if ((directions[i].lat - lat) < 0.00001 && (directions[i].lng - lng) < 0.00001){
-  				directions[i].elevation = elevation;
-  			}
-  		}
-
-  		counter ++;
-  		console.log('end, counter');
-  		console.log(end);
-  		console.log(counter);
-
-  		if (counter >= end)
-  		{
-  			console.log('terminated')	
-  			
-  			res.send(directions)
-  		}*/
   	});
   };
 
@@ -107,31 +84,31 @@ router.get('/', function(req, res, next) {
 				console.log('directions calculated');
 
 				console.log(directions.length);
-
-				end = directions.length;
-
-				var altitudePath = '/maps/api/elevation/json?locations='
-
-				for (var i = 0; i < directions.length; i++){
-					if (i == 0)
-			  			altitudePath += directions[i].lat +','+ directions[i].lng;
-					else
-						altitudePath += '|' + directions[i].lat + ',' + directions[i].lng;
-				} 	
-
-				altitudePath += '&key=AIzaSyC6U0ex_0ClX8ZiEU9schuHfIFSyQ1KXKE';
-
-				https.request({
-					host: 'maps.googleapis.com',
-					path: altitudePath
-				}, altitudeCallback).end();
-
 			}			   	
 	     }
+
+	     end = directions.length;
+
+		var altitudePath = '/maps/api/elevation/json?locations='
+
+		for (var i = 0; i < directions.length; i++){
+			if (i == 0)
+	 			altitudePath += directions[i].lat +','+ directions[i].lng;
+			else
+				altitudePath += '|' + directions[i].lat + ',' + directions[i].lng;
+			} 	
+
+			altitudePath += '&key=AIzaSyC6U0ex_0ClX8ZiEU9schuHfIFSyQ1KXKE';
+
+			https.request({
+				host: 'maps.googleapis.com',
+				path: altitudePath
+			}, altitudeCallback).end();
 	   });
 	}
 
 	https.request(options, callback).end();
+
 });
 
 module.exports = router;
