@@ -1,9 +1,7 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/Users/Sylly/.nvm/versions/node/v4.0.0/bin/node',
-1 verbose cli   '/Users/Sylly/.nvm/versions/node/v4.0.0/bin/npm',
-1 verbose cli   'start' ]
-2 info using npm@2.14.2
-3 info using node@v4.0.0
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.0
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info prestart 3dmap@0.0.0
 6 info start 3dmap@0.0.0
@@ -11,20 +9,18 @@
 8 info 3dmap@0.0.0 Failed to exec start script
 9 verbose stack Error: 3dmap@0.0.0 start: `node ./bin/www`
 9 verbose stack Exit status 1
-9 verbose stack     at EventEmitter.<anonymous> (/Users/Sylly/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
-9 verbose stack     at emitTwo (events.js:87:13)
-9 verbose stack     at EventEmitter.emit (events.js:172:7)
-9 verbose stack     at ChildProcess.<anonymous> (/Users/Sylly/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/utils/spawn.js:24:14)
-9 verbose stack     at emitTwo (events.js:87:13)
-9 verbose stack     at ChildProcess.emit (events.js:172:7)
-9 verbose stack     at maybeClose (internal/child_process.js:817:16)
-9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+9 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+9 verbose stack     at EventEmitter.emit (events.js:110:17)
+9 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:14:12)
+9 verbose stack     at ChildProcess.emit (events.js:110:17)
+9 verbose stack     at maybeClose (child_process.js:1008:16)
+9 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1080:5)
 10 verbose pkgid 3dmap@0.0.0
 11 verbose cwd /Users/Sylly/GitHub/3dmap/js/3dmap
 12 error Darwin 14.4.0
-13 error argv "/Users/Sylly/.nvm/versions/node/v4.0.0/bin/node" "/Users/Sylly/.nvm/versions/node/v4.0.0/bin/npm" "start"
-14 error node v4.0.0
-15 error npm  v2.14.2
+13 error argv "node" "/usr/local/bin/npm" "start"
+14 error node v0.12.0
+15 error npm  v2.5.1
 16 error code ELIFECYCLE
 17 error 3dmap@0.0.0 start: `node ./bin/www`
 17 error Exit status 1
