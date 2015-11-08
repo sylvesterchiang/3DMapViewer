@@ -45,6 +45,7 @@
 		EF6A54791BEF3C0000380D08 /* ball1.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6A54781BEF3C0000380D08 /* ball1.png */; };
 		EF6A547B1BEF427B00380D08 /* ball2.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6A547A1BEF427B00380D08 /* ball2.png */; };
 		EF6A547D1BEF428500380D08 /* ball3.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6A547C1BEF428500380D08 /* ball3.png */; };
+		EF6A54811BEF913600380D08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF6A54801BEF913600380D08 /* Images.xcassets */; };
 		EFBC9DE61AB67C4200496BE6 /* GLDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		EF6A54781BEF3C0000380D08 /* ball1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball1.png; sourceTree = "<group>"; };
 		EF6A547A1BEF427B00380D08 /* ball2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball2.png; sourceTree = "<group>"; };
 		EF6A547C1BEF428500380D08 /* ball3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball3.png; sourceTree = "<group>"; };
+		EF6A54801BEF913600380D08 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EFBC9DE41AB67C4200496BE6 /* GLDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLDataModel.h; path = iOS/GLDataModel.h; sourceTree = "<group>"; };
 		EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLDataModel.m; path = iOS/GLDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 				3AE0447B13D6252E00F51EF4 /* ES2Renderer.m */,
 				EFBC9DE41AB67C4200496BE6 /* GLDataModel.h */,
 				EFBC9DE51AB67C4200496BE6 /* GLDataModel.m */,
+				EF6A54801BEF913600380D08 /* Images.xcassets */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44BBBA3D1BEE53C900119855 /* Cube.png in Resources */,
+				EF6A54811BEF913600380D08 /* Images.xcassets in Resources */,
 				EF091E7B1AAEB55F00013CFC /* DreidelTextureMap.png in Resources */,
 				EF69C5081BEEA1D3008A9A3D /* myFilter.vsh in Resources */,
 				3A609E6211B9DB9400AA4C48 /* character.vsh in Resources */,
@@ -343,6 +347,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -362,6 +368,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
