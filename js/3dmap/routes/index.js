@@ -35,6 +35,9 @@ router.get('/', function(req, res, next) {
   			directions[i].elevation = result.results[i].elevation;
   			console.log(result.results[i].elevation);
   		}
+
+  		console.log(res.headerSent)
+  		res.send(directions);
   		/*result = JSON.parse(body);
   		console.log(result);
   		var elevation = result.results[0].elevation;
