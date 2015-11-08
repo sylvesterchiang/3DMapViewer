@@ -352,7 +352,7 @@
 				GCC_PREFIX_HEADER = Paralax_Dungeon_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = ESSENTIAL_GL_PRACTICES_IOS;
 				INFOPLIST_FILE = "Paralax_Dungeon-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flaxapps.dreidelp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flaxapps.zombies;
 				PRODUCT_NAME = "Dreidel App";
 				PROVISIONING_PROFILE = "";
 			};
@@ -369,7 +369,7 @@
 				GCC_PREFIX_HEADER = Paralax_Dungeon_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = ESSENTIAL_GL_PRACTICES_IOS;
 				INFOPLIST_FILE = "Paralax_Dungeon-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flaxapps.dreidelp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flaxapps.zombies;
 				PRODUCT_NAME = "Dreidel App";
 				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;

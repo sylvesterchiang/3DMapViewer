@@ -135,10 +135,6 @@ float rot = 0.0;
     mtxLoadPerspective(projection, 90, (float)m_viewWidth / (float)m_viewHeight,1.0,5000.0);
     
     
-    
-    
-    
-    
     if(self.dataObj){
         
         CMRotationMatrix m = self.dataObj.rMat;
@@ -161,9 +157,9 @@ float rot = 0.0;
     
     
     
-    mtxLoadTranslate(modelView,500.0*cos(self.dataObj.yaw+M_PI),500.0*sin(self.dataObj.yaw+M_PI),500.0-self.dataObj.bounceZ);
+    mtxLoadTranslate(modelView,1000.0+self.dataObj.bounceZ,0.0,0.0);
     
-    mtxRotateZApply(modelView,rot++);
+    mtxRotateYApply(modelView,rot+=5);
     
     // Multiply the modelview and projection matrix and set it in the shader
     mtxMultiply(mvp, projection, modelView);

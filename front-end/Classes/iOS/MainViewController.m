@@ -166,9 +166,9 @@ float yaw;
     
     
     [motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXTrueNorthZVertical toQueue:queue withHandler:^(CMDeviceMotion *data, NSError *error){
-        yaw = data.attitude.yaw+M_PI;
+//        yaw = data.attitude.yaw+M_PI;
         glView.dataObj.rMat = data.attitude.rotationMatrix;
-        NSLog(@"%f",yaw);
+//        NSLog(@"%f",yaw);
     }];
     
     glView.opaque = NO; // NB: Apple DELETES THIS VALUE FROM NIB
@@ -177,6 +177,8 @@ float yaw;
     self.view.backgroundColor = [UIColor purpleColor];
     
     glView.dataObj = [GLDataModel new];
+    
+    glView.dataObj.alpha = 1.0;
     
     [self.view bringSubviewToFront:glView];
     
@@ -213,21 +215,7 @@ float yaw;
 
 bool isBouncing = false;
 -(void)bounceTimer{
-    if (!isBouncing) {
-        if (glView.dataObj.bounceZ > 0) {
-            glView.dataObj.bounceZ--;
-            glView.dataObj.alpha = MAX(0,glView.dataObj.alpha - .002);
-            notificationHUD.alpha = MAX(0,notificationHUD.alpha - .002);
-        }
-    }
-    else{
-        glView.dataObj.texNum = nearLoc;
-        glView.dataObj.alpha = 1.0;
-        notificationHUD.alpha = 1.0;
-        if (glView.dataObj.bounceZ < 500) {
-            glView.dataObj.bounceZ++;
-        }
-    }
+            glView.dataObj.bounceZ-=.05;
 }
 
 -(void)grabLoc{
@@ -235,7 +223,6 @@ bool isBouncing = false;
 }
 
 float lastHA = 13248789324.0;
-
 
 #pragma mark - LOCATION
 
@@ -263,21 +250,21 @@ double cLo = 0.0;
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    if (newLocation.horizontalAccuracy >= oldLocation.horizontalAccuracy) {
-        cLa = newLocation.coordinate.latitude;
-        cLo = newLocation.coordinate.longitude;
-        if(!isBouncing){
-            for (int i = 0; i < 3; i++) {
-                CGPoint pt = locs[i];
-                if (sqrt(pow(cLa - pt.x,2.0) + pow(cLo - pt.y,2.0)) < 0.001) {
-                    nearLoc = i;
-                    [self startAnimation];
-                    break;
-                }
-            }
-        }
-       
-    }
+//    if (newLocation.horizontalAccuracy >= oldLocation.horizontalAccuracy) {
+//        cLa = newLocation.coordinate.latitude;
+//        cLo = newLocation.coordinate.longitude;
+//        if(!isBouncing){
+//            for (int i = 0; i < 3; i++) {
+//                CGPoint pt = locs[i];
+//                if (sqrt(pow(cLa - pt.x,2.0) + pow(cLo - pt.y,2.0)) < 0.001) {
+//                    nearLoc = i;
+//                    [self startAnimation];
+//                    break;
+//                }
+//            }
+//        }
+//       
+//    }
 }
 
 
